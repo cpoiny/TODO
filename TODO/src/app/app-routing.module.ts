@@ -7,9 +7,15 @@ import { ListComponent } from './pages/list/list.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
+    redirectTo: 'home',
+    pathMatch: "full"
+  },
+  {
+    path:'home',
     component: HomeComponent
   },
+
   {
     path: "add",
     component: AddComponent

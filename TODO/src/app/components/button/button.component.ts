@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-button',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class ButtonComponent {
 
+  constructor (public router: Router){}
+
+  
 }
