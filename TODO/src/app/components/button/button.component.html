@@ -1,0 +1,9 @@
+<!-- bouton de la page d'accueil -->
+<button *ngIf="router.url.endsWith('/home')" type="button">Créer une tâche</button>
+
+
+<!-- Bouton de la page de création d'une todo -->
+<button *ngIf="router.url.endsWith('add')" type="button">Valider une tâche</button>
+
+<!-- Bouton pour modifier une todo -->
+<!-- <button *ngIf="router.url.endsWith('history')" type="button">Modifier ma tâche</button> -->

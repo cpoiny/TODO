@@ -1,0 +1,13 @@
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+ul li {
+    list-style: none;
+}
+form{
+    flex-direction: column;
+}
+img{
+    display: inline;
+}

@@ -1,0 +1,9 @@
+button {
+    width: 248px;
+    height:48px;
+    border-radius:30px;
+    color: white;
+    background-color: var(--blue);
+    border: none;
+    z-index: 2;
+}
