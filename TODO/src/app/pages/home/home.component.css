@@ -1,3 +1,15 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height:80vh;
+}
 img {
-    border: blue solid 1px;
+    width:5vw;
+    display: inline;
+}
+p{
+    margin-bottom: 32px;
 }
