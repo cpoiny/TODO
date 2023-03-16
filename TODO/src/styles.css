@@ -18,3 +18,8 @@
     --blue: #64A7D9;
     --green: #88E7A1;
 }
+
+*{
+    background-color: var(--black);
+    color: white;
+}
