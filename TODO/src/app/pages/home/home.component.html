@@ -1,30 +1,41 @@
+<main>
 
 
-<!-- Affichage si il y a des éléments dans la todo -->
-<section >
-    <h2>Taches urgentes</h2>
-    <ul *ngFor="let todo of todoList">
-        <span>{{ todo.picture}}</span><li>{{todo.content}} </li>
-    </ul>
-</section>
-
-<!-- <section *ngFor="">
-    <h2 >Tâches non urgentes</h2>
-    <ul>
-        <li>bla bloup
-        </li>
-    </ul>
-</section> -->
+    <!-- Affichage si il y a des éléments dans la todo -->
+    <section class="urgent" *ngIf="todoList.length > 0 ; else otherContent">
+       <div class="flex">
+           
+        <p> <img class="icone-urgent" src="assets/icons/urgent-icon.png" alt="icon-urgent">
+           Taches urgentes</p>
 
 
-<div>
-<!-- <ng-template #other-content> -->
-    <p>Aucune tâche pour le moment
-        <img src="assets/icons/no-todo-icon.png" alt="icone">
-    </p>
+       </div>
+        <ul *ngFor="let todo of todoList">
+            <li>
+                <button type="button"> </button>
+                 <img class="icone-category" src="assets/icons/{{todo.picture}}" alt="icon-category">{{todo.content}} 
+            </li>
+        </ul>
+    </section>
 
-    <app-button routerLink="/add"></app-button>
+    <br>
 
-    <!-- <ng-template #other-content> -->
+    <!-- <section class="nonUrgent" *ngIf="todoList.length > 0 ; else otherContent">
+        <p>Taches non urgentes</p>
+        <ul *ngFor="let todo of todoList">
+            <li><span>{{ todo.picture}}</span> {{todo.content}} </li>
+        </ul>
+    </section> -->
 
-    </div>
+
+
+    <ng-template #otherContent>
+        <p>Aucune tâche pour le moment
+            <img src="assets/icons/no-todo-icon.png" alt="icone">
+        </p>
+
+        <app-button routerLink="/add"></app-button>
+
+    </ng-template>
+
+</main>
