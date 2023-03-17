@@ -17,6 +17,7 @@ footer a {
 
 footer a svg {
     width: 45%;
+    background-color: var(--dark-blue);
 }
 
 footer .burger {
@@ -35,7 +36,7 @@ footer .history {
     margin-right: 71.41px;
 }
 
-footer .history:active {
+footer .history:active{
     background-color: var(--pink);
 }
 

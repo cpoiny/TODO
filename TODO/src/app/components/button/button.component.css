@@ -6,4 +6,5 @@ button {
     background-color: var(--blue);
     border: none;
     z-index: 2;
+    cursor: pointer;
 }

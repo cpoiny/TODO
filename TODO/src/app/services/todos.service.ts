@@ -16,7 +16,6 @@ export class TodosService {
 quantity: number = 0;
 todoList : ITodo[] = [];
 todoUrgent : ITodo[] = [];
-notTodoUrgent: ITodo[] = [];
 
   // function to create a TodoList
   private createTodoList() {
@@ -56,30 +55,8 @@ notTodoUrgent: ITodo[] = [];
     const urgentTodos = TODOLIST.filter(todo => todo.isUrgent);
     this.todoUrgent = urgentTodos;
     console.log("liste urgente service", this.todoUrgent)
-    // for (let i = 0; i < this.todoList.length; i++) {
-    //   console.log("todolist de la fonction", this.todoList);
-    //   if (this.todoList[i].isUrgent) {
-    //     this.todoUrgent.push(this.todoList[i]);
-    //   }
-    // }
+   
 
     }
-    todoNotUrgent(): void {
-    
-      const notUrgentTodos = TODOLIST.filter(todo => !todo.isUrgent);
-      this.notTodoUrgent = notUrgentTodos;
-      // for (let i = 0; i < this.todoList.length; i++) {
-      //   console.log("todolist de la fonction", this.todoList);
-      //   if (this.todoList[i].isUrgent) {
-      //     this.todoUrgent.push(this.todoList[i]);
-      //   }
-      // }
-  
-      }
-
-
-
-
-
-
+   
 }

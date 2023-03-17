@@ -1,14 +1,14 @@
 main{
     margin: 37px 0 0 26px;
     width:100vw;
-    height:75vh;
+    height:80vh;
     overflow-y:scroll;
     
 }
 .otherContent{
         justify-content: center;
         align-items: center;
-        width: 85vw;
+        width: 100%;
         min-height:75vh;
  }
 

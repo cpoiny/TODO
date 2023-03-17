@@ -1,11 +1,11 @@
-<main class="flex column">
+<main class="flex column" *ngIf="todoList.length > 0 ; else otherContent">
 
     <!-- Affichage si il y a des éléments dans la todoList -->
 
     <!-- Section des todos urgentes -->
-    <section class="urgent" *ngIf="todoList.length > 10 ; else otherContent">
+    <section class="urgent" >
         <!-- <app-todo-card></app-todo-card> -->
-        <ng-container>
+        
 
             <div class="flex">
                 <p><img class="icone-urgent" src="assets/icons/urgent-icon.png" alt="icon-urgent">Tâches urgentes</p>
@@ -19,13 +19,13 @@
             </ul>
 
 
-        </ng-container>
+        
     </section>
 
     <br>
 
     <!-- Section des todos non urgentes -->
-    <section class="non-urgent" *ngIf="todoList.length > 10 ; else otherContent">
+    <section class="non-urgent">
         <div class="flex">
             <p><img class="icone-urgent" src="assets/icons/flower-icon.png" alt="icon-flower">Tâches non urgentes</p>
         </div>
@@ -44,7 +44,7 @@
 <!-- Affichage si la todoList est vide-->
 <ng-template #otherContent>
     <div class="otherContent flex column">
-        <p>Aucune tâche pour le moment<img src="assets/icons/no-todo-icon.png" alt="icone"></p>
+        <p>Aucune tâche pour le moment <span>&#128588;</span></p>
         <app-button routerLink="/add"></app-button>
     </div>
 </ng-template>

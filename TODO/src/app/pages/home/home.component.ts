@@ -11,15 +11,15 @@ import { ITodo } from 'src/app/todo';
 export class HomeComponent {
   todoList: ITodo[] = [];
   todoUrgent : ITodo[] = [];
-  notTodoUrgent: ITodo[] = [];
 
 
   constructor(
-    private todoService: TodosService
+    public todoService: TodosService
   ) { }
 
   ngOnInit(): void {
     this.getTodosMock();
+    this.todoService.onlyTodoUrgent();
     console.log("liste urgente", this.todoService.onlyTodoUrgent());
     
    
@@ -27,8 +27,12 @@ export class HomeComponent {
 
   getTodosMock() {
     this.todoList = this.todoService.getTodosMock();
+  
   }
 
+  // getTodosUrgent() {
+  //   this.todoUrgent = this.todoService.onlyTodoUrgent();
+  // }
 
 }
 
