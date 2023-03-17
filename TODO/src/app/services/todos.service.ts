@@ -13,8 +13,10 @@ export interface ITodosTotal {
 })
 export class TodosService {
 
-  quantity: number = 0;
-
+quantity: number = 0;
+todoList : ITodo[] = [];
+todoUrgent : ITodo[] = [];
+notTodoUrgent: ITodo[] = [];
 
   // function to create a TodoList
   private createTodoList() {
@@ -44,11 +46,40 @@ export class TodosService {
 
 
   // function pour récuperer toutes les todos du mock
-  getTodos(): ITodo[] {
-    console.log("liste de todo", TODOLIST)
+  getTodosMock(): ITodo[] {
     return TODOLIST;
   }
 
 
+  onlyTodoUrgent(): void {
+    
+    const urgentTodos = TODOLIST.filter(todo => todo.isUrgent);
+    this.todoUrgent = urgentTodos;
+    console.log("liste urgente service", this.todoUrgent)
+    // for (let i = 0; i < this.todoList.length; i++) {
+    //   console.log("todolist de la fonction", this.todoList);
+    //   if (this.todoList[i].isUrgent) {
+    //     this.todoUrgent.push(this.todoList[i]);
+    //   }
+    // }
+
+    }
+    todoNotUrgent(): void {
+    
+      const notUrgentTodos = TODOLIST.filter(todo => !todo.isUrgent);
+      this.notTodoUrgent = notUrgentTodos;
+      // for (let i = 0; i < this.todoList.length; i++) {
+      //   console.log("todolist de la fonction", this.todoList);
+      //   if (this.todoList[i].isUrgent) {
+      //     this.todoUrgent.push(this.todoList[i]);
+      //   }
+      // }
   
+      }
+
+
+
+
+
+
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TodosService } from 'src/app/services/todos.service';
 import { ITodo } from 'src/app/todo';
 
@@ -9,14 +9,15 @@ import { ITodo } from 'src/app/todo';
 })
 export class TodoCardComponent {
 
-todoList : ITodo[] = [];
+  todoList : ITodo[] = [];
+
 
 constructor(
   public todoService : TodosService
 ){}
 
 ngOnInit() {
-  this.todoService.getTodos();
+  this.todoService.getTodosMock();
   this.todoService.getTodoList();
 }
 

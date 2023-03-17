@@ -9,21 +9,29 @@ import { ITodo } from 'src/app/todo';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  todoList : ITodo[] = [];
+  todoList: ITodo[] = [];
+  todoUrgent : ITodo[] = [];
+  notTodoUrgent: ITodo[] = [];
 
 
   constructor(
-    private todoService : TodosService
-  ){}
-  
-ngOnInit():void{
-  this.getTodos();
+    private todoService: TodosService
+  ) { }
+
+  ngOnInit(): void {
+    this.getTodosMock();
+    console.log("liste urgente", this.todoService.onlyTodoUrgent());
+    
+   
+  }
+
+  getTodosMock() {
+    this.todoList = this.todoService.getTodosMock();
+  }
+
+
 }
 
 
- 
-getTodos() {
-  this.todoList = this.todoService.getTodos();
-}
 
-}
+

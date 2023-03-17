@@ -3,26 +3,44 @@ footer {
     justify-content: space-around;
     width: 100vw;
     position: fixed;
-    bottom:0;
+    bottom: 0;
     border-top: white 1px solid;
 }
+
 footer a {
-    margin: 17px 0 ;
+    margin: 17px 0;
     border-radius: 50%;
     background-color: var(--dark-blue);
     width: 65.86px;
     height: 65.86px;
 }
 
-footer a img {
-    display: block;
-    margin: 18px auto 0; 
+footer a svg {
+    width: 45%;
 }
 
 footer .burger {
     margin-left: 57px;
 }
 
+footer .burger:active {
+    background-color: var(--green);
+}
+
+footer .plus:active {
+    background-color: var(--yellow);
+}
+
 footer .history {
     margin-right: 71.41px;
+}
+
+footer .history:active {
+    background-color: var(--pink);
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

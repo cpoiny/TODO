@@ -1,30 +1,35 @@
 <main class="flex column">
 
-<!-- Affichage si il y a des éléments dans la todoList -->
+    <!-- Affichage si il y a des éléments dans la todoList -->
 
     <!-- Section des todos urgentes -->
-    <section class="urgent" *ngIf="todoList.length > 0 ; else otherContent">
-        <app-todo-card></app-todo-card>
-        <!-- <div class="flex">
-            <p> <img class="icone-urgent" src="assets/icons/urgent-icon.png" alt="icon-urgent">Tâches urgentes</p>
-        </div>
+    <section class="urgent" *ngIf="todoList.length > 10 ; else otherContent">
+        <!-- <app-todo-card></app-todo-card> -->
+        <ng-container>
 
-        <ul *ngFor="let todo of todoList">
-            <li>
-                <button type="button"> </button>
-                <img class="icone-category" src="assets/icons/{{todo.picture}}" alt="icon-category">{{todo.content}}
-            </li>
-        </ul> -->
+            <div class="flex">
+                <p><img class="icone-urgent" src="assets/icons/urgent-icon.png" alt="icon-urgent">Tâches urgentes</p>
+            </div>
+
+            <ul *ngFor="let todo of todoList">
+                <li>
+                    <button type="button"> </button>
+                    <img class="icone-category" src="assets/icons/{{todo.picture}}" alt="icon-category">{{todo.content}}
+                </li>
+            </ul>
+
+
+        </ng-container>
     </section>
 
     <br>
 
-<!-- Section des todos non urgentes -->
-     <section class="non-urgent" *ngIf="todoList.length > 0 ; else otherContent">
+    <!-- Section des todos non urgentes -->
+    <section class="non-urgent" *ngIf="todoList.length > 10 ; else otherContent">
         <div class="flex">
             <p><img class="icone-urgent" src="assets/icons/flower-icon.png" alt="icon-flower">Tâches non urgentes</p>
         </div>
-        
+
         <ul *ngFor="let todo of todoList">
             <li>
                 <button type="button"> </button>
