@@ -3,18 +3,18 @@
 <!-- Affichage si il y a des éléments dans la todo -->
 <section >
     <h2>Taches urgentes</h2>
-    <ul>
-        <li>bla bla </li>
+    <ul *ngFor="let todo of todoList">
+        <span>{{ todo.picture}}</span><li>{{todo.content}} </li>
     </ul>
 </section>
 
-<section>
-    <h2>Tâches non urgentes</h2>
+<!-- <section *ngFor="">
+    <h2 >Tâches non urgentes</h2>
     <ul>
         <li>bla bloup
         </li>
     </ul>
-</section>
+</section> -->
 
 
 <div>
