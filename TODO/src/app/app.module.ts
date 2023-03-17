@@ -9,6 +9,7 @@ import { HistoryComponent } from './pages/history/history.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
+import { TodoCardComponent } from './components/todo-card/todo-card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ButtonComponent } from './components/button/button.component';
     HistoryComponent,
     HeaderComponent,
     FooterComponent,
-    ButtonComponent
+    ButtonComponent,
+    TodoCardComponent
   ],
   imports: [
     BrowserModule,

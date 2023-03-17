@@ -20,10 +20,7 @@ ngOnInit():void{
   this.getTodos();
 }
 
-// getTodos():void{
-// this.todoService.getTodos()
-//                     .subscribe(todos => this.todoList = todos);
-// }
+
  
 getTodos() {
   this.todoList = this.todoService.getTodos();
