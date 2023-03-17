@@ -1,0 +1,10 @@
+<div class="flex">
+    <p> <img class="icone-urgent" src="assets/icons/urgent-icon.png" alt="icon-urgent">Tâches urgentes</p>
+</div>
+
+<ul *ngFor="let todo of todoList">
+    <li>
+        <button type="button"> </button>
+        <img class="icone-category" src="assets/icons/{{todo.picture}}" alt="icon-category">{{todo.content}}
+    </li>
+</ul>

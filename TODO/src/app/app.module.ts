@@ -5,22 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AddComponent } from './pages/add/add.component';
-import { ListComponent } from './pages/list/list.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
+import { TodoCardComponent } from './components/todo-card/todo-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AddComponent,
-    ListComponent,
     HistoryComponent,
     HeaderComponent,
     FooterComponent,
-    ButtonComponent
+    ButtonComponent,
+    TodoCardComponent
   ],
   imports: [
     BrowserModule,
