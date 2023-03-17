@@ -27,6 +27,7 @@ export class HomeComponent {
 
   getTodosMock() {
     this.todoList = this.todoService.getTodosMock();
+  
   }
 
   // getTodosUrgent() {
