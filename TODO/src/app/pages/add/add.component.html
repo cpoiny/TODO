@@ -1,31 +1,36 @@
-<div class="container  flex column ">
-    <form [formGroup]="tacheForm" class="flex column " action="">
-        <p class="titre style">Sélectionner votre catégorie :</p>
+<div class="container flex column">
 
-        <div class="categoryList" *ngFor="let category of listCategory, let i = index">
+    <p class="titre style">Sélectionner votre catégorie :</p>
+
+    <div class="flex">
+
+
+
+        <div class="categoryList " *ngFor="let category of listCategory">
             <button class="category">{{category.content}}</button>
         </div>
+    </div>
 
-</form>
 
 
-        <!-- Formulaire -->
 
-        <form [formGroup]="tacheForm" class="flex column" action="">
-            <label class="titre style" for="tacheToDO">Quelle tâche avez-vous à effectuer ?</label>
-            <textarea class="tache-a-remplir" placeholder="Exemple: Faire les courses"
-                formControlName="tacheToDO"></textarea>
+    <!-- Formulaire -->
 
-            <!-- Option urgence de la taĉhe -->
-            <div class="option flex">
+    <!-- <form [formGroup]="tacheForm" class="flex column" action=""> -->
+        <label class="titre style" for="tacheToDO">Quelle tâche avez-vous à effectuer ?</label>
+        <textarea class="tache-a-remplir" placeholder="Exemple: Faire les courses"
+            formControlName="tacheToDO"></textarea>
 
-                <input class="style urgente" type="radio" name="urgente">
-                <p class="style">La tâche est urgente</p>
-                <img src="assets/icons/urgent-icon.png" alt="icon_urgent" width="20px">
+        <!-- Option urgence de la taĉhe -->
+        <div class="option flex">
 
-            </div>
+            <input class="style urgente" type="radio" name="urgente">
+            <p class="style">La tâche est urgente</p>
+            <img src="assets/icons/urgent-icon.png" alt="icon_urgent" width="20px">
 
-            <button class="valider" type="submit">Valider ma tâche</button>
-        </form>
+        </div>
+
+        <button class="valider" type="submit">Valider ma tâche</button>
+    <!-- </form> -->
 
 </div>

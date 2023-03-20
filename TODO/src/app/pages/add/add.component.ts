@@ -12,7 +12,6 @@ export class AddComponent {
 
 // Déclarer la propriété FormGroup
 tacheForm! : FormGroup
-catForm! :FormGroup
 listCategory : ICategory[] = CATEGORYLIST;
 
 
@@ -24,8 +23,6 @@ ngOnInit(){
   console.log("list", this.listCategory)}
 
 
-submitCat(){
-  console.log(this.catForm.value);
-}
+
 
 }
