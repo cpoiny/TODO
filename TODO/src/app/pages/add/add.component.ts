@@ -11,16 +11,19 @@ import { CATEGORYLIST } from 'src/app/todoList.mock';
 export class AddComponent {
 
 // Déclarer la propriété FormGroup
-tacheForm! : FormGroup
 listCategory : ICategory[] = CATEGORYLIST;
 
 
 constructor(
-  private formBuilder : FormBuilder
+  public formBuilder : FormBuilder,
 ) {}
 
 ngOnInit(){
-  console.log("list", this.listCategory)}
+  console.log("list", this.listCategory)
+}
+
+      
+
 
 
 
