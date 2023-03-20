@@ -54,32 +54,32 @@ export const TODOLIST : ITodo [] = [
 export const CATEGORYLIST : ICategory[] = [
     {
         id: 1,
-        content: "cleaning-icon.png",
-        category : "cleaning"
-    },
-    {
-        id: 2,
-        content: "shopping-icon.png",
+        content: "🛍️",
         category : "shopping"
     },
     {
+        id: 2,
+        content: "💊️",
+        category : "health"
+    },
+    {
         id: 3,
-        content: "work-icon.png",
+        content: "💼",
         category : "work"
     },
     {
         id: 4,
-        content: "bill-icon.png",
+        content: "💸",
         category : "bills"
     },
     {
         id: 5,
-        content: "health-icon.png",
-        category : "health"
+        content: "🧼",
+        category : "cleaning"
     },
     {
         id: 6,
-        content: "other-icon.png",
+        content: "🤷‍♀️",
         category : "other"
     },
 ]

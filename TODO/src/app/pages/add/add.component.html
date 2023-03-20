@@ -1,59 +1,31 @@
-<div class="container flex column">
-    <!-- <form [formGroup]="tacheForm" class="flex " action=""> -->
-        <label class="titre style">Sélectionner votre catégorie :</label>
+<div class="container  flex column ">
+    <form [formGroup]="tacheForm" class="flex column " action="">
+        <p class="titre style">Sélectionner votre catégorie :</p>
 
-        <!-- Liste des catégories -->
-
-<form class="flex" [formGroup]="catForm" (ngSubmit)="submitCat()">
-
-
-    <div class="list-category">
-        <input id="cleaning" class="category" type="text" value="cleaning" formControlName="cleaning">
-        <img src="../../../assets/icons/cleaning-icon.png" alt="">
-    </div>
-    <div class="list-category">
-        <input id="shopping" class="category" type="text" value="shopping" formControlName="shopping">
-        <img src="../../../assets/icons/shopping-icon.png" alt="">
-    </div>
-    <div class="list-category">
-        <input id="work" class="category" type="text" value="work" formControlName="work">
-        <img src="../../../assets/icons/work-icon.png" alt="">
-    </div>
-    <div class="list-category">
-        <input id="bills" class="category" type="text" value="bills" formControlName="bills">
-        <img src="../../../assets/icons/bill-icon.png" alt="">
-    </div>
-    <div class="list-category">
-        <input id="health" class="category" type="text" value="health" formControlName="health">
-        <img src="../../../assets/icons/health-icon.png" alt="">
-    </div>
-    <div class="list-category">
-        <input id="other" class="category" type="text" value="other" formControlName="other">
-        <img src="../../../assets/icons/shopping-icon.png" alt="">
-    </div>
-
-
+        <div class="categoryList" *ngFor="let category of listCategory, let i = index">
+            <button class="category">{{category.content}}</button>
+        </div>
 
 </form>
 
 
         <!-- Formulaire -->
 
-        <!-- <form [formGroup]="tacheForm" class="flex " action=""> -->
-        <label class="titre style" for="tacheToDO">Quelle tâche avez-vous à effectuer ?</label>
-        <textarea class="tache-a-remplir" placeholder="Exemple: Faire les courses"
-            formControlName="tacheToDO"></textarea>
+        <form [formGroup]="tacheForm" class="flex column" action="">
+            <label class="titre style" for="tacheToDO">Quelle tâche avez-vous à effectuer ?</label>
+            <textarea class="tache-a-remplir" placeholder="Exemple: Faire les courses"
+                formControlName="tacheToDO"></textarea>
 
-        <!-- Option urgence de la taĉhe -->
-        <div class="option flex">
+            <!-- Option urgence de la taĉhe -->
+            <div class="option flex">
 
-            <input class="style urgente" type="radio" name="urgente">
-            <p class="style">La tâche est urgente</p>
-            <img src="assets/icons/urgent-icon.png" alt="icon_urgent" width="20px">
+                <input class="style urgente" type="radio" name="urgente">
+                <p class="style">La tâche est urgente</p>
+                <img src="assets/icons/urgent-icon.png" alt="icon_urgent" width="20px">
 
-        </div>
-        <button type="submit">Valider ma tâche</button>
+            </div>
 
-    <!-- </form> -->
+            <button class="valider" type="submit">Valider ma tâche</button>
+        </form>
 
-
+</div>
