@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ICategory } from 'src/app/todo';
+import { CATEGORYLIST } from 'src/app/todoList.mock';
 
 @Component({
   selector: 'app-add',
@@ -10,10 +12,20 @@ export class AddComponent {
 
 // Déclarer la propriété FormGroup
 tacheForm! : FormGroup
+catForm! :FormGroup
+listCategory : ICategory[] = CATEGORYLIST;
 
 
 constructor(
   private formBuilder : FormBuilder
 ) {}
+
+ngOnInit(){
+  console.log("list", this.listCategory)}
+
+
+submitCat(){
+  console.log(this.catForm.value);
+}
 
 }
