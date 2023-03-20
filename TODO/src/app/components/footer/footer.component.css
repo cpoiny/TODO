@@ -24,6 +24,7 @@ footer .burger {
     margin-left: 57px;
 }
 
+
 footer .burger:active {
     background-color: var(--green);
 }
@@ -44,4 +45,13 @@ footer .history:active{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.bg-green {
+    background-color: var(--green);
+}
+.bg-yellow {
+    background-color: var(--yellow);
+}
+.bg-pink {
+    background-color: var(--pink);
 }
