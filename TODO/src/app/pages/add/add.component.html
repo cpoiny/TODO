@@ -4,33 +4,30 @@
 
     <div class="container flex column">
 
-        <label for="cat" class="titre style">Sélectionner votre catégorie :</label>
+        <label for="cat" class="titre style">Sélectionner votre catégorie :
 
-        <input type="text" id="cat" formControlName="cat">
-        <div class="flex categoryList">
-            <div *ngFor="let category of listCategory">
-                <button class="category">{{category.content}}</button>
+            <input type="text" id="cat" formControlName="cat">
+            <div class="flex categoryList">
+                <div *ngFor="let category of listCategory">
+                    <button class="category">{{category.content}}</button>
+                </div>
             </div>
-    </div>
 
 
 
 
-    <div class="flex column"> 
-        <label class="titre style" for="todo">Quelle tâche avez-vous à effectuer ?</label>
-        <input type="text" id="todo" formControlName="todo" class="tache-a-remplir" placeholder="Exemple: Faire les courses">
-        <!-- Option urgence de la taĉhe -->
-         <div class="option flex">
+            <div class="flex column">
+                <label class="titre style" for="todo">Quelle tâche avez-vous à effectuer ?
+                    <input type="text" id="todo" formControlName="todo" class="tache-a-remplir"
+                        placeholder="Exemple: Faire les courses">
+                    <!-- Option urgence de la taĉhe -->
+                    <!-- <div class="option flex">
 
             <input class="style urgente" type="radio" name="urgente">
             <p class="style">La tâche est urgente</p>
             <img src="assets/icons/urgent-icon.png" alt="icon_urgent" width="20px">
 
-        </div>
+        </div> -->
 
-        <button class="valider" type="submit" (click)="validate()">Valider ma tâche</button>
-    </div>
-
-
-
+                    <button class="valider" type="submit" (click)="validate()">Valider ma tâche</button>
     
