@@ -21,7 +21,3 @@
     --green: #88E7A1;
 }
 
-body{
-    height : 100vh;
-    width: min(390px, 100%);
-}
