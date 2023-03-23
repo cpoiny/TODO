@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TodosService } from 'src/app/services/todos.service';
-import { ICategory, ITodo } from 'src/app/todo';
-import { CATEGORYLIST } from 'src/app/todoList.mock';
+import { ITodo } from 'src/app/todo';
+
 
 @Component({
   selector: 'app-add',
@@ -15,11 +15,11 @@ import { CATEGORYLIST } from 'src/app/todoList.mock';
 export class AddComponent {
 
   // Déclarer la propriété FormGroup
-  listCategory: ICategory[] = CATEGORYLIST;
+  
   todoForm!: FormGroup;
   validationError: [] = [];
   todoList: ITodo[] = [];
-  todoItem : ITodo ={
+  todoItem : ITodo = {
     id : 0,
     content : "",
     category: null,
@@ -36,37 +36,37 @@ export class AddComponent {
   }
 
   ngOnInit() {
-    console.log("list", this.listCategory);
+    
     this.todoForm = this.formBuilder.group({
       cat: [null],
       todo: [null, [Validators.required]],
       urgence:[false]
     });
-    console.log(this.todoForm.value);
-   // this.createTodo();
-
+    this.getTodoList();
+  console.log("todolist pour test",this.todoList);
   }
 
-  // addTodo() {
-  //   // this.todoService.GetTodoInfo(this.todoForm.value.cat);
-  //   this.todoService.addToTodoList(this.todoForm.value);
-  //   this.router.navigate(['home']);
-  //   // this.todoService.GetTodoInfo(this.todoForm.value);
-  
-  // }
+ 
 
   addTodo() {
+    //j'assigne la valeur de la catégorie à l'attribut category de ma todo
     this.todoItem.category = this.todoForm.value.cat;
+     //j'assigne la valeur de la todo à l'attribut content de ma todo
     this.todoItem.content = this.todoForm.value.todo;
+     //j'assigne l'urgence à l'attribut category de ma todo
     this.todoItem.isUrgent = this.todoForm.value.urgence;
     
-    // this.todoService.GetTodoInfo(this.todoForm.value.cat);
+   //j'ajoute les éléments au todoItem
     this.todoService.addToTodoList(this.todoItem);
+    // je redirige sur la page home
     this.router.navigate(['home']);
-    // this.todoService.GetTodoInfo(this.todoForm.value);
+    
   
   }
 
+  getTodoList() {
+    this.todoList = this.todoService.getTodoList();
+  }
  
 
 

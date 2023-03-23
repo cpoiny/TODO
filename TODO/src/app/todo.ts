@@ -9,8 +9,3 @@ export interface ITodo {
     doneDate: Date | null
 }
 
-export interface ICategory {
-    id: number;
-    content: string;
-    category: CategoryType
-}

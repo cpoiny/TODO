@@ -19,17 +19,12 @@ export class HomeComponent {
   ) { }
 
   ngOnInit(): void {
-       
+      this.getTodoList();
   }
 
-  // getTodosMock() {
-  //   this.todoList = this.todoService.getTodosMock();
-  
-  // }
-
-  // getTodosUrgent() {
-  //   this.todoUrgent = this.todoService.onlyTodoUrgent();
-  // }
+ getTodoList(){
+  this.todoList = this.todoService.getTodoList();
+ }
 
 }
 
