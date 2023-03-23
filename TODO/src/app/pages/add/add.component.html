@@ -1,37 +1,66 @@
 <!-- Formulaire -->
 
-<form [formGroup]="todoForm">
+<form [formGroup]="todoForm" >
 
     <div class="container flex column">
 
-        <label for="cat" class="titre style">Sélectionner votre catégorie :
+        <label for="cat" class="titre style">Sélectionner votre catégorie :</label>
 
-            <div class="flex categoryList">
-            <input type="text" id="cat" formControlName="cat">
-            <img src="assets/icons/cleaning-icon.png" alt="cleaning">
-            </div>
 
-            <div class="flex categoryList">
-                <div *ngFor="let category of listCategory">
-                    <button class="category">{{category.content}}</button>
+            <div class="all-cat">
+
+                <div class="flex categoryList">
+                    <input type="radio" id="cat" formControlName="cat" name="cat" value="🛍️ ">
+                    <img src="assets/icons/shopping-icon.png" alt="shopping">
+                </div>
+
+                <div class="flex categoryList">
+                    <input type="radio" id="cat" formControlName="cat" name="cat" value="💊️">
+                    <img src="assets/icons/health-icon.png" alt="health">
+                </div>
+
+                <div class="flex categoryList">
+                    <input type="radio" id="cat" formControlName="cat" name="cat" value="💼">
+                    <img src="assets/icons/work-icon.png" alt="work">
+                </div>
+
+                <div class="flex categoryList">
+                    <input type="radio" id="cat" formControlName="cat" name="cat" value="💸">
+                    <img src="assets/icons/bill-icon.png" alt="bills">
+                </div>
+
+                <div class="flex categoryList">
+                    <input type="radio" id="cat" formControlName="cat" name="cat" value="🧼">
+                    <img src="assets/icons/cleaning-icon.png" alt="cleaning">
+                </div>
+
+                <div class="flex categoryList">
+                    <input type="radio" id="cat" formControlName="cat"name="cat" value="🤷‍♀️">
+                    <img src="assets/icons/other-icon.png" alt="other">
                 </div>
             </div>
 
 
 
 
+
+
             <div class="flex column">
-                <label class="titre style" for="todo">Quelle tâche avez-vous à effectuer ?
+                <label class="titre style" for="todo">Quelle tâche avez-vous à effectuer ?</label>
                     <input type="text" id="todo" formControlName="todo" class="tache-a-remplir"
                         placeholder="Exemple: Faire les courses">
                     <!-- Option urgence de la taĉhe -->
-                    <!-- <div class="option flex">
+                    <div class="option flex">
 
-            <input class="style urgente" type="radio" name="urgente">
-            <p class="style">La tâche est urgente</p>
-            <img src="assets/icons/urgent-icon.png" alt="icon_urgent" width="20px">
+                        <input class="style urgente" type="radio" name="urgente">
+                        <p class="style">La tâche est urgente</p>
+                        <img src="assets/icons/urgent-icon.png" alt="icon_urgent" width="20px">
 
-        </div> -->
+                    </div>
 
-                    <button class="valider" type="submit" (click)="validate()">Valider ma tâche</button>
-    
+                    <button class="valider" type="submit" (click)="addTodo()">Valider ma tâche</button>
+
+            </div>
+    </div>
+
+</form>

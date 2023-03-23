@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ITodo } from '../todo';
-import { TODOLIST } from '../todoList.mock';
 
 export interface ITodosTotal {
   todo: ITodo;
@@ -12,11 +11,10 @@ export interface ITodosTotal {
 })
 export class TodosService {
 
-quantity: number = 0;
-todoList : ITodo[] = [];
-todoUrgent : ITodo[] = [];
+  quantity: number = 0;
+  todoList: ITodo[] = [];
 
-  // function to create a TodoList
+  // function to create a TodoList type panier en localStorage
   private createTodoList() {
     const newTodoList = JSON.stringify([]);
     localStorage.setItem('todoList', newTodoList);
@@ -24,12 +22,14 @@ todoUrgent : ITodo[] = [];
 
 
   //function pour sauvegarder la liste de Todos
-  private saveTodoList(todoList: ITodosTotal[]) {
+  private saveTodoList(todoList: ITodo[]) {
     localStorage.setItem('todoList', JSON.stringify(todoList));
   }
 
 
-// To get la liste de Todo
+
+
+  // To get la liste de Todo
   getTodoList() {
     const todoList = localStorage.getItem('todoList');
     if (todoList) {
@@ -40,22 +40,16 @@ todoUrgent : ITodo[] = [];
     }
   }
 
-  
+  //function pour ajouter une todo à la todoList
+  addToTodoList(todoItem: ITodo) {
+    const todoList = this.getTodoList();
+    todoList.push(todoItem);
+    this.saveTodoList(todoList);
+  }
 
 
-  // function pour récuperer toutes les todos du mock
-  // getTodosMock(): ITodo[] {
-  //   return TODOLIST;
-  // }
 
 
-  // onlyTodoUrgent(): void {
-    
-  //   const urgentTodos = TODOLIST.filter(todo => todo.isUrgent);
-  //   this.todoUrgent = urgentTodos;
-  //   console.log("liste urgente service", this.todoUrgent)
-   
 
-  //   }
-   
+
 }
