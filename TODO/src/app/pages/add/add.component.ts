@@ -13,7 +13,7 @@ export class AddComponent {
   // Déclarer la propriété FormGroup
   listCategory: ICategory[] = CATEGORYLIST;
   todoForm!: FormGroup;
-  // validationError: [] = [];
+  validationError: [] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,15 +29,16 @@ export class AddComponent {
   }
 
   validate() {
-    // this.validationError = [];
+    this.validationError = [];
     if (this.todoForm.invalid) {
       Object.keys(this.todoForm.controls).forEach((input) => {
         const currentInput = this.todoForm.get(input);
         console.log("currentInput", currentInput);
-        // if (currentInput && currentInput.status === "INVALID") {
-        //   this.validationError.push();
-        // }
+        if (currentInput && currentInput.status === "INVALID") {
+          this.validationError.push();
+        }
       });
     }
+    console.log(this.todoForm.value);
   }
 }
