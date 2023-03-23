@@ -4,7 +4,6 @@ import { TODOLIST } from '../todoList.mock';
 
 export interface ITodosTotal {
   todo: ITodo;
-
 }
 
 
@@ -45,18 +44,18 @@ todoUrgent : ITodo[] = [];
 
 
   // function pour récuperer toutes les todos du mock
-  getTodosMock(): ITodo[] {
-    return TODOLIST;
-  }
+  // getTodosMock(): ITodo[] {
+  //   return TODOLIST;
+  // }
 
 
-  onlyTodoUrgent(): void {
+  // onlyTodoUrgent(): void {
     
-    const urgentTodos = TODOLIST.filter(todo => todo.isUrgent);
-    this.todoUrgent = urgentTodos;
-    console.log("liste urgente service", this.todoUrgent)
+  //   const urgentTodos = TODOLIST.filter(todo => todo.isUrgent);
+  //   this.todoUrgent = urgentTodos;
+  //   console.log("liste urgente service", this.todoUrgent)
    
 
-    }
+  //   }
    
 }

@@ -17,18 +17,16 @@ export class HomeComponent {
     public todoService: TodosService
   ) { }
 
-  ngOnInit(): void {
-    this.getTodosMock();
-    this.todoService.onlyTodoUrgent();
-    console.log("liste urgente", this.todoService.onlyTodoUrgent());
-    
-   
-  }
+  // ngOnInit(): void {
+  //   this.getTodosMock();
+  //   this.todoService.onlyTodoUrgent();
+  //   console.log("liste urgente", this.todoService.onlyTodoUrgent());   
+  // }
 
-  getTodosMock() {
-    this.todoList = this.todoService.getTodosMock();
+  // getTodosMock() {
+  //   this.todoList = this.todoService.getTodosMock();
   
-  }
+  // }
 
   // getTodosUrgent() {
   //   this.todoUrgent = this.todoService.onlyTodoUrgent();

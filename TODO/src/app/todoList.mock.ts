@@ -1,4 +1,4 @@
-import { ITodo } from "./todo";
+import { ICategory, ITodo } from "./todo";
 
 export const TODOLIST : ITodo [] = [
 {
@@ -49,4 +49,37 @@ export const TODOLIST : ITodo [] = [
     isUrgent: false,
     doneDate: null
 }
+]
+
+export const CATEGORYLIST : ICategory[] = [
+    {
+        id: 1,
+        content: "🛍️",
+        category : "shopping"
+    },
+    {
+        id: 2,
+        content: "💊️",
+        category : "health"
+    },
+    {
+        id: 3,
+        content: "💼",
+        category : "work"
+    },
+    {
+        id: 4,
+        content: "💸",
+        category : "bills"
+    },
+    {
+        id: 5,
+        content: "🧼",
+        category : "cleaning"
+    },
+    {
+        id: 6,
+        content: "🤷‍♀️",
+        category : "other"
+    },
 ]

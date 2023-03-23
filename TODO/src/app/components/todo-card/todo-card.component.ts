@@ -17,7 +17,7 @@ constructor(
 ){}
 
 ngOnInit() {
-  this.todoService.getTodosMock();
+  // this.todoService.getTodosMock();
   this.todoService.getTodoList();
 }
 

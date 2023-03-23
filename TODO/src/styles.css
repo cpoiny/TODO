@@ -6,6 +6,8 @@
     padding:0;
     font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
+    background-color: var(--black);
+    color: white;
 }
 
 /*  couleurs   */ 
@@ -19,7 +21,3 @@
     --green: #88E7A1;
 }
 
-*{
-    background-color: var(--black);
-    color: white;
-}
