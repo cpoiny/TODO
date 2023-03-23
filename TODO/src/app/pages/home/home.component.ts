@@ -13,15 +13,14 @@ export class HomeComponent {
   todoUrgent : ITodo[] = [];
 
 
+
   constructor(
     public todoService: TodosService
   ) { }
 
-  // ngOnInit(): void {
-  //   this.getTodosMock();
-  //   this.todoService.onlyTodoUrgent();
-  //   console.log("liste urgente", this.todoService.onlyTodoUrgent());   
-  // }
+  ngOnInit(): void {
+       
+  }
 
   // getTodosMock() {
   //   this.todoList = this.todoService.getTodosMock();

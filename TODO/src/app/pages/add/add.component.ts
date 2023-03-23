@@ -19,6 +19,7 @@ export class AddComponent {
   todoForm!: FormGroup;
   validationError: [] = [];
   todoList: ITodo[] = [];
+  todoInfo! : string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -38,26 +39,15 @@ export class AddComponent {
 
   }
 
-  createTodo(): void {
+  addTodo() {
     // this.todoService.GetTodoInfo(this.todoForm.value.cat);
-    this.todoService.GetTodoInfo(this.todoForm.value.todo)
+    this.todoService.addToTodoList(this.todoForm.value);
     this.router.navigate(['home']);
-
+    // this.todoService.GetTodoInfo(this.todoForm.value);
+  
   }
 
-  submit() {
-    // this.validationError = [];
-    // if (this.todoForm.invalid) {
-    //   Object.keys(this.todoForm.controls).forEach((value) => {
-    //     const currentInput = this.todoForm.get(value);
-    //     console.log("currentInput", currentInput);
-    //     if (currentInput && currentInput.status === "INVALID") {
-    //       this.validationError.push();
-    //     }
-    //   });
-    // }
-    console.log(this.todoForm.value);
-  }
+ 
 
 
 

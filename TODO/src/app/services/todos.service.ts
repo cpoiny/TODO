@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { ITodo } from '../todo';
-import { TODOLIST } from '../todoList.mock';
 
 export interface ITodosTotal {
   todo: ITodo;
@@ -25,9 +22,6 @@ todoList : ITodo[] = [];
 
 
   //function pour sauvegarder la liste de Todos
-  // private saveTodoList(todoList: ITodosTotal[]) {
-  //   localStorage.setItem('todoList', JSON.stringify(todoList));
-  // }
   private saveTodoList(todoList: ITodosTotal[]) {
     localStorage.setItem('todoList', JSON.stringify(todoList));
   }
@@ -45,28 +39,15 @@ todoList : ITodo[] = [];
       this.getTodoList();
   }
   }
-
-  
-  // RÉCUPÉRATION de la value du FormGroup
-  GetTodoInfo (todoInfo: FormGroup) {
-    // ajoute à l'emplacement de stockage 
-    localStorage.setItem('todoform', JSON.stringify(todoInfo));
-
+  addToTodoList(todoTotal : ITodosTotal){
+    const todoList = this.getTodoList();
+    todoList.push(todoTotal);
+    this.saveTodoList(todoList);
   }
 
-  // function pour récuperer toutes les todos du mock
-  // getTodosMock(): ITodo[] {
-  //   return TODOLIST;
-  // }
+  
+ 
 
 
-  // onlyTodoUrgent(): void {
-    
-  //   const urgentTodos = TODOLIST.filter(todo => todo.isUrgent);
-  //   this.todoUrgent = urgentTodos;
-  //   console.log("liste urgente service", this.todoUrgent)
-   
-
-  //   }
    
 }
