@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ICategory } from 'src/app/todo';
+import { Router } from '@angular/router';
+import { TodosService } from 'src/app/services/todos.service';
+import { ICategory, ITodo } from 'src/app/todo';
 import { CATEGORYLIST } from 'src/app/todoList.mock';
 
 @Component({
@@ -8,31 +10,41 @@ import { CATEGORYLIST } from 'src/app/todoList.mock';
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css'],
 
-    
+
 })
 export class AddComponent {
 
   // Déclarer la propriété FormGroup
   listCategory: ICategory[] = CATEGORYLIST;
- todoForm!: FormGroup;
+  todoForm!: FormGroup;
   validationError: [] = [];
+  todoList: ITodo[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
+    public todoService: TodosService,
+    public router: Router
   ) {
-   }
+  }
 
   ngOnInit() {
     console.log("list", this.listCategory);
     this.todoForm = this.formBuilder.group({
-      cat: [],
+      cat: [null],
       todo: [null, [Validators.required]]
     });
     console.log(this.todoForm.value);
-    
+   // this.createTodo();
+
   }
 
-  
+  createTodo(): void {
+    // this.todoService.GetTodoInfo(this.todoForm.value.cat);
+    this.todoService.GetTodoInfo(this.todoForm.value.todo)
+    this.router.navigate(['home']);
+
+  }
+
   submit() {
     // this.validationError = [];
     // if (this.todoForm.invalid) {
@@ -47,13 +59,13 @@ export class AddComponent {
     console.log(this.todoForm.value);
   }
 
-  
 
 
-  
 
 
- 
 
- 
+
+
+
+
 }

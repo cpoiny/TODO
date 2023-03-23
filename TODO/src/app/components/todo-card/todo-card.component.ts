@@ -12,6 +12,7 @@ export class TodoCardComponent {
   todoList : ITodo[] = [];
 
 
+
 constructor(
   public todoService : TodosService
 ){}
@@ -20,5 +21,5 @@ ngOnInit() {
   // this.todoService.getTodosMock();
   this.todoService.getTodoList();
 }
-
 }
+
