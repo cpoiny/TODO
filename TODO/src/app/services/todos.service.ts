@@ -40,7 +40,10 @@ todoUrgent : ITodo[] = [];
     }
   }
 
-  
+  addTodoList(){
+   const todoList = this.getTodoList();
+   todoList.push()
+  }
 
 
   // function pour récuperer toutes les todos du mock
