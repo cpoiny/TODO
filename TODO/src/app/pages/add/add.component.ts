@@ -19,7 +19,14 @@ export class AddComponent {
   todoForm!: FormGroup;
   validationError: [] = [];
   todoList: ITodo[] = [];
-  todoInfo! : string;
+  todoItem : ITodo ={
+    id : 0,
+    content : "",
+    category: null,
+    picture: "",
+    isUrgent: false,
+    doneDate: null
+  }
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,16 +39,29 @@ export class AddComponent {
     console.log("list", this.listCategory);
     this.todoForm = this.formBuilder.group({
       cat: [null],
-      todo: [null, [Validators.required]]
+      todo: [null, [Validators.required]],
+      urgence:[false]
     });
     console.log(this.todoForm.value);
    // this.createTodo();
 
   }
 
+  // addTodo() {
+  //   // this.todoService.GetTodoInfo(this.todoForm.value.cat);
+  //   this.todoService.addToTodoList(this.todoForm.value);
+  //   this.router.navigate(['home']);
+  //   // this.todoService.GetTodoInfo(this.todoForm.value);
+  
+  // }
+
   addTodo() {
+    this.todoItem.category = this.todoForm.value.cat;
+    this.todoItem.content = this.todoForm.value.todo;
+    this.todoItem.isUrgent = this.todoForm.value.urgence;
+    
     // this.todoService.GetTodoInfo(this.todoForm.value.cat);
-    this.todoService.addToTodoList(this.todoForm.value);
+    this.todoService.addToTodoList(this.todoItem);
     this.router.navigate(['home']);
     // this.todoService.GetTodoInfo(this.todoForm.value);
   

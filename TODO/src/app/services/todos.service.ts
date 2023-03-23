@@ -11,8 +11,8 @@ export interface ITodosTotal {
 })
 export class TodosService {
 
-quantity: number = 0;
-todoList : ITodo[] = [];
+  quantity: number = 0;
+  todoList: ITodo[] = [];
 
   // function to create a TodoList type panier en localStorage
   private createTodoList() {
@@ -22,14 +22,14 @@ todoList : ITodo[] = [];
 
 
   //function pour sauvegarder la liste de Todos
-  private saveTodoList(todoList: ITodosTotal[]) {
+  private saveTodoList(todoList: ITodo[]) {
     localStorage.setItem('todoList', JSON.stringify(todoList));
   }
 
- 
- 
 
-// To get la liste de Todo
+
+
+  // To get la liste de Todo
   getTodoList() {
     const todoList = localStorage.getItem('todoList');
     if (todoList) {
@@ -37,17 +37,19 @@ todoList : ITodo[] = [];
     } else {
       this.createTodoList();
       this.getTodoList();
+    }
   }
-  }
-  addToTodoList(todoTotal : ITodosTotal){
+
+  //function pour ajouter une todo à la todoList
+  addToTodoList(todoItem: ITodo) {
     const todoList = this.getTodoList();
-    todoList.push(todoTotal);
+    todoList.push(todoItem);
     this.saveTodoList(todoList);
   }
 
-  
- 
 
 
-   
+
+
+
 }
