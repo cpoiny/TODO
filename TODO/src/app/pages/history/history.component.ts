@@ -30,12 +30,14 @@ export class HistoryComponent {
 
   getHistory() {
     this.todoListHistory = this.todoList.filter((todo) => todo.doneDate !== null)
+    console.log("liste historique", this.todoListHistory);
+    this.todoListHistory.sort();
   }
 
 
   checkUrgentList() {
-    this.onlyUrgentList = this.todoList.filter((todo) => todo.isUrgent === true);
-    this.notUrgentList = this.todoList.filter((todo) => todo.isUrgent === false);
+    this.onlyUrgentList = this.todoListHistory.filter((todo) => todo.isUrgent === true);
+    this.notUrgentList = this.todoListHistory.filter((todo) => todo.isUrgent === false);
   }
 }
 

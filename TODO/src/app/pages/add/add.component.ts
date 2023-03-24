@@ -81,7 +81,7 @@ export class AddComponent {
       this.todoItem.isUrgent = true
     };
     // ajout de la date à null pour le moment car todo en cours
-    this.todoItem.doneDate = null;
+    this.todoItem.doneDate = new Date;
     //j'ajoute les éléments au todoItem
     this.todoService.addToTodoList(this.todoItem);
     // je redirige sur la page home

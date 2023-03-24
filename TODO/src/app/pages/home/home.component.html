@@ -1,4 +1,4 @@
-<main class="flex column" *ngIf="todoList.length > 0 ; else otherContent">
+<main class="flex column" *ngIf="todoListFiltrated.length > 0 ; else otherContent">
 
     <!-- Affichage si il y a des éléments dans la todoList -->
 
@@ -13,7 +13,7 @@
 
         <ul *ngFor="let todo of onlyUrgentList">
             <li>
-                <button type="button"> </button>
+                <button type="button" (click)="todoDone(todo.id)"> </button>
                 <span>{{todo.category}} </span>
                 <span> {{todo.content}}</span>
             </li>
@@ -34,7 +34,7 @@
         <ul *ngFor="let todo of notUrgentList">
 
             <li>
-                <button type="button"> </button>
+                <button type="button" (click)="todoDone(todo.id)"> </button>
                 <span>{{todo.category}}</span>
                 <span>{{todo.content}}</span>
             </li>
