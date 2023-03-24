@@ -1,9 +1,9 @@
-<main class="flex column" *ngIf="todoList.length <= 0 ; else otherContent">
+<main class="flex column" *ngIf="todoListHistory.length > 0 ; else otherContent">
 
     <!-- Affichage si il y a des éléments dans la todoList -->
 
     <!-- Section des todos urgentes -->
-    <section class="urgent">
+    <section class="urgent" *ngIf="onlyUrgentList.length > 0">
         <!-- <app-todo-card></app-todo-card> -->
 
 
@@ -11,9 +11,9 @@
             <p><img class="icone-urgent" src="assets/icons/urgent-icon.png" alt="icon-urgent"> Tâches urgentes</p>
         </div>
 
-        <ul *ngFor="let todo of todoList">
+        <ul *ngFor="let todo of todoListHistory">
             <li>
-                <button type="button"> </button>
+                <button type="button" value="checked" (click)="removeTodo(todo.id)"> </button>
                 <span>{{todo.category}} </span>
                 <span> {{todo.content}}</span>
             </li>
@@ -26,21 +26,21 @@
     <br>
 
     <!-- Section des todos non urgentes -->
-    <!-- <section class="non-urgent">
+    <section class="non-urgent" *ngIf="todoListHistory.length > 0">
         <div class="flex">
             <p><img class="icone-urgent" src="assets/icons/flower-icon.png" alt="icon-flower">Tâches non urgentes</p>
         </div>
 
-        <ul *ngFor="let todo of todoList">
-            <ul *ngFor="let todo of todoList">
+        <ul *ngFor="let todo of todoListHistory">
+
                 <li>
-                    <button type="button"> </button>
+                    <button type="button" value="checked" (click)="removeTodo(todo.id)"> </button>
                     <span>{{todo.category}}</span>
                     <span>{{todo.content}}</span>
                 </li>
-            </ul>
+        
         </ul>
-    </section> -->
+    </section>
 
 </main>
 
