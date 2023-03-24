@@ -12,7 +12,7 @@ export class HistoryComponent {
   onlyUrgentList: ITodo[] = [];
   notUrgentList: ITodo[] = [];
   todoListHistory: ITodo[] = [];
-
+  todoListFiltrated: ITodo[] = [];
 
   constructor(
     public todoService: TodosService
@@ -39,7 +39,21 @@ export class HistoryComponent {
     this.onlyUrgentList = this.todoListHistory.filter((todo) => todo.isUrgent === true);
     this.notUrgentList = this.todoListHistory.filter((todo) => todo.isUrgent === false);
   }
+
+
+  removeTodo(id: number): void {
+    this.todoListHistory.forEach((todo) => {
+      if (todo.id === id) {
+        todo.doneDate = null;
+      }
+      const index = this.todoListHistory.findIndex(todo => todo.id === id);
+      this.todoListHistory.splice(index, 1);
+      this.todoListHistory.push();
+
+    })
+  }
 }
+
 
 
 
