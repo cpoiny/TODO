@@ -19,6 +19,9 @@ export class AddComponent {
   todoForm!: FormGroup;
   validationError: [] = [];
   todoList: ITodo[] = [];
+  todoUrgent? : boolean = false;
+
+
   todoItem: ITodo = {
     id: 0,
     content: "",
@@ -40,7 +43,7 @@ export class AddComponent {
     this.todoForm = this.formBuilder.group({
       cat: [null],
       todo: [null, [Validators.required]],
-      urgence: [false]
+      urgence: []
     });
     this.getTodoList();
     console.log("todolist pour test", this.todoList);
@@ -58,6 +61,7 @@ export class AddComponent {
     this.todoList = this.todoService.getTodoList();
   }
 
+
   
   //créer une fonction pour donner un id à une todo
   addTodo() {
@@ -70,7 +74,9 @@ export class AddComponent {
     //j'assigne la valeur de la todo à l'attribut content de ma todo
     this.todoItem.content = this.todoForm.value.todo;
     //j'assigne l'urgence à l'attribut category de ma todo
-    this.todoItem.isUrgent = this.todoForm.value.urgence;
+    if(this.todoForm.value.urgence === "checked") {
+      this.todoItem.isUrgent = true
+    };
     // ajout de la date à null pour le moment car todo en cours
     this.todoItem.doneDate = null;
     //j'ajoute les éléments au todoItem
