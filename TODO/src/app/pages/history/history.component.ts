@@ -26,6 +26,7 @@ export class HistoryComponent {
 
   getTodoList() {
     this.todoList = this.todoService.getTodoList();
+    this.todoListFiltrated = this.todoList.filter((todo) => todo.doneDate === null);
   }
 
   getHistory() {
@@ -48,7 +49,9 @@ export class HistoryComponent {
       }
       const index = this.todoListHistory.findIndex(todo => todo.id === id);
       this.todoListHistory.splice(index, 1);
-      this.todoListHistory.push();
+      this.todoService.saveTodoList(this.todoListHistory);
+      this.todoListFiltrated.push();
+      this.todoService.saveTodoList(this.todoListFiltrated);
 
     })
   }
