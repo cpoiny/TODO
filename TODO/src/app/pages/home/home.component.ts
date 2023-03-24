@@ -10,8 +10,8 @@ import { ITodo } from 'src/app/todo';
 })
 export class HomeComponent {
   todoList: ITodo[] = [];
-  todoUrgent : ITodo[] = [];
-
+  onlyUrgentList: ITodo[] = [];
+  notUrgentList : ITodo[] = [];
 
 
   constructor(
@@ -20,14 +20,20 @@ export class HomeComponent {
 
   ngOnInit(): void {
       this.getTodoList();
+      this.checkUrgentList();
   }
 
  getTodoList(){
   this.todoList = this.todoService.getTodoList();
  }
 
+ checkUrgentList() {
+  
+  this.onlyUrgentList = this.todoList.filter((todo)=> todo.isUrgent === true);
+  this.notUrgentList = this.todoList.filter((todo)=> todo.isUrgent === false);
+  
 }
 
 
 
-
+}

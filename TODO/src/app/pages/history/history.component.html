@@ -3,7 +3,7 @@
     <!-- Affichage si il y a des éléments dans la todoList -->
 
     <!-- Section des todos urgentes -->
-    <section class="urgent">
+    <section class="urgent" *ngIf="onlyUrgentList.length > 0">
         <!-- <app-todo-card></app-todo-card> -->
 
 
@@ -11,7 +11,7 @@
             <p><img class="icone-urgent" src="assets/icons/urgent-icon.png" alt="icon-urgent"> Tâches urgentes</p>
         </div>
 
-        <ul *ngFor="let todo of todoList">
+        <ul *ngFor="let todo of onlyUrgentList">
             <li>
                 <button type="button"> </button>
                 <span>{{todo.category}} </span>
@@ -26,21 +26,21 @@
     <br>
 
     <!-- Section des todos non urgentes -->
-    <!-- <section class="non-urgent">
+    <section class="non-urgent" *ngIf="notUrgentList.length > 0">
         <div class="flex">
             <p><img class="icone-urgent" src="assets/icons/flower-icon.png" alt="icon-flower">Tâches non urgentes</p>
         </div>
 
-        <ul *ngFor="let todo of todoList">
-            <ul *ngFor="let todo of todoList">
+        <ul *ngFor="let todo of notUrgentList">
+
                 <li>
                     <button type="button"> </button>
                     <span>{{todo.category}}</span>
                     <span>{{todo.content}}</span>
                 </li>
-            </ul>
+        
         </ul>
-    </section> -->
+    </section>
 
 </main>
 

@@ -14,6 +14,8 @@ export class TodosService {
   quantity: number = 0;
   todoList: ITodo[] = [];
 
+
+
   // function to create a TodoList type panier en localStorage
   private createTodoList() {
     const newTodoList = JSON.stringify([]);
@@ -46,9 +48,6 @@ export class TodosService {
     todoList.push(todoItem);
     this.saveTodoList(todoList);
   }
-
-
-
 
 
 

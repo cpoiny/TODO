@@ -9,6 +9,9 @@ import { ITodo } from 'src/app/todo';
 })
 export class HistoryComponent {
   todoList: ITodo[] = [];
+  onlyUrgentList: ITodo[] = [];
+  notUrgentList : ITodo[] = [];
+
 
 
 constructor(
@@ -17,12 +20,21 @@ constructor(
 
 ngOnInit(): void {
     this.getTodoList();
+    this.checkUrgentList();
 }
 
 getTodoList(){
 this.todoList = this.todoService.getTodoList();
 }
 
+
+
+checkUrgentList() {
+  
+  this.onlyUrgentList = this.todoList.filter((todo)=> todo.isUrgent === true);
+  this.notUrgentList = this.todoList.filter((todo)=> todo.isUrgent === false);
+  
+}
 }
 
 
