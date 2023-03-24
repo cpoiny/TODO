@@ -1,0 +1,12 @@
+app-header{
+ height:70px;   
+}
+
+main{
+    flex:1;
+    overflow-y: scroll;
+}
+
+app-footer{
+    height:100px;   
+   }
