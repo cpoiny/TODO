@@ -35,30 +35,26 @@ export class HomeComponent {
     this.todoList = this.todoService.getTodoList();
     this.todoListHistory = this.todoList.filter((todo) => todo.doneDate !== null);
   }
-  checkUrgentList() {
 
+  checkUrgentList() {
     this.onlyUrgentList = this.todoListFiltrated.filter((todo) => todo.isUrgent === true);
     this.notUrgentList = this.todoListFiltrated.filter((todo) => todo.isUrgent === false);
-
   }
 
   //fonction pour basculer la todo dans history en lui donnant une date
   todoDone(id: number): void {
     this.todoListFiltrated.forEach((todo) => {
       if (todo.id === id) {
-        console.log("todo id", todo.id, id);
-        console.log(todo.doneDate)
         todo.doneDate = new Date;
-        console.log(todo.doneDate)
       }
       const index = this.todoListFiltrated.findIndex(todo => todo.id === id);
+      //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
       this.todoListFiltrated.splice(index, 1);
-      this.todoListHistory.push();
-
+      //j'ajoute la todo qui a une date maintenant dans la liste history
+      this.todoListHistory.push(todo);
     })
   }
 }
-
 
 
 
