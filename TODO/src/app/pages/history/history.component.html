@@ -1,1 +1,56 @@
-<p>history works!</p>
+<main class="flex column" *ngIf="todoList.length <= 0 ; else otherContent">
+
+    <!-- Affichage si il y a des éléments dans la todoList -->
+
+    <!-- Section des todos urgentes -->
+    <section class="urgent">
+        <!-- <app-todo-card></app-todo-card> -->
+
+
+        <div class="flex">
+            <p><img class="icone-urgent" src="assets/icons/urgent-icon.png" alt="icon-urgent"> Tâches urgentes</p>
+        </div>
+
+        <ul *ngFor="let todo of todoList">
+            <li>
+                <button type="button"> </button>
+                <span>{{todo.category}} </span>
+                <span> {{todo.content}}</span>
+            </li>
+        </ul>
+
+
+
+    </section>
+
+    <br>
+
+    <!-- Section des todos non urgentes -->
+    <!-- <section class="non-urgent">
+        <div class="flex">
+            <p><img class="icone-urgent" src="assets/icons/flower-icon.png" alt="icon-flower">Tâches non urgentes</p>
+        </div>
+
+        <ul *ngFor="let todo of todoList">
+            <ul *ngFor="let todo of todoList">
+                <li>
+                    <button type="button"> </button>
+                    <span>{{todo.category}}</span>
+                    <span>{{todo.content}}</span>
+                </li>
+            </ul>
+        </ul>
+    </section> -->
+
+</main>
+
+
+<!-- Affichage si la todoList est vide-->
+<ng-template #otherContent>
+    <div class="otherContent flex column">
+        <p>Votre historique est vide <img class="icone-category" src="assets/icons/no-todo-icon.png"
+                alt="icon-category"></p>
+        
+        <button routerLink="/add" type="button" class="history">Créer une tâche</button>
+    </div>
+</ng-template>
