@@ -50,8 +50,11 @@ export class HomeComponent {
       const index = this.todoListFiltrated.findIndex(todo => todo.id === id);
       //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
       this.todoListFiltrated.splice(index, 1);
+      this.todoService.saveTodoList(this.todoListFiltrated);
+      
       //j'ajoute la todo qui a une date maintenant dans la liste history
       this.todoListHistory.push(todo);
+      this.todoService.saveTodoList(this.todoListHistory);
     })
   }
 }

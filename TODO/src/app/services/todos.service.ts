@@ -24,7 +24,7 @@ export class TodosService {
 
 
   //function pour sauvegarder la liste de Todos
-  private saveTodoList(todoList: ITodo[]) {
+  saveTodoList(todoList: ITodo[]) {
     localStorage.setItem('todoList', JSON.stringify(todoList));
   }
 
