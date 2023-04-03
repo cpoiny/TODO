@@ -19,7 +19,7 @@ export class AddComponent {
   todoForm!: FormGroup;
   validationError: [] = [];
   todoList: ITodo[] = [];
-  
+
   todoUrgent?: boolean = false;
 
 
@@ -48,13 +48,7 @@ export class AddComponent {
     });
 
     this.getTodoList();
-   
-  }
-
-
-  //fonction pour générer un id
-  genId(todoList: ITodo[]): number {
-    return todoList.length > 0 ? Math.max(...todoList.map(todoItem => todoItem.id)) + 1 : 1;
+  
   }
 
 
@@ -63,15 +57,18 @@ export class AddComponent {
     this.todoList = this.todoService.getTodoList();
   }
 
- 
-
 
   //créer une fonction pour donner un id à une todo
-  addTodo() {
+  addTodo(): void {
     //je récupère ma todoList
     const todoList = this.getTodoList();
+    if (this.todoList.length > 0) {
+    const id = this.todoList.length + 1;
     //je lui donne un id
-    // this.todoItem.id = this.genId(todoList);
+    this.todoItem.id = id;
+  } else {
+    this.todoItem.id = 1;
+  }
     //j'assigne la valeur de la catégorie à l'attribut category de ma todo
     this.todoItem.category = this.todoForm.value.cat;
     //j'assigne la valeur de la todo à l'attribut content de ma todo
@@ -87,13 +84,4 @@ export class AddComponent {
     // je redirige sur la page home
     this.router.navigate(['home']);
   }
-
-
-
-
-
-
-
-
-
 }

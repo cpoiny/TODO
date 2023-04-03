@@ -24,11 +24,12 @@ export class HomeComponent {
     this.getTodoList();
     this.checkUrgentList();
     this.getTodoListHistory();
+    
   }
 
   getTodoList() {
-    this.todoList = this.todoService.getTodoList();
-    this.todoListFiltrated = this.todoList.filter((todo) => todo.doneDate === null);
+   this.todoList = this.todoService.getTodoList();
+   this.todoListFiltrated = this.todoList.filter((todo) => todo.doneDate === null);
   }
 
   getTodoListHistory() {
