@@ -36,11 +36,11 @@ export class HistoryComponent {
     this.todoListFiltrated = this.todoList.filter((todo) => todo.doneDate === null);
   }
   getHistory() {
-    this.todoListHistory =this.todoService.getHistoryList();
+   // this.todoListHistory =this.todoService.getHistoryList();
     
 
-    // this.todoListHistory = this.todoList.filter((todo) => todo.doneDate !== null)
-    // console.log("liste historique", this.todoListHistory);
+    this.todoListHistory = this.todoList.filter((todo) => todo.doneDate !== null)
+     console.log("liste historique2", this.todoListHistory);
     //this.todoListHistory.sort();
   }
 

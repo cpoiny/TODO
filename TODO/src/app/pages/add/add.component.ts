@@ -90,6 +90,7 @@ export class AddComponent {
     this.todoItem.doneDate = null;
     //j'ajoute les éléments au todoItem
     this.todoService.addToTodoList(this.todoItem);
+    
     // je redirige sur la page home
     this.router.navigate(['home']);
     

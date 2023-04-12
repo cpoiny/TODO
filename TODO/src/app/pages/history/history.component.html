@@ -31,7 +31,7 @@
             <p><img class="icone-urgent" src="assets/icons/flower-icon.png" alt="icon-flower">Tâches non urgentes</p>
         </div>
 
-        <ul *ngFor="let todo of todoListHistory">
+        <ul *ngFor="let todo of todoListHistory; let index = index">
 
                 <li>
                     <button type="button" value="checked" (click)="removeTodo(todo.id)"> </button>

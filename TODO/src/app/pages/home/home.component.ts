@@ -25,22 +25,20 @@ export class HomeComponent {
     this.getTodoListFiltrated();
     this.checkUrgentList();
     this.getTodoListHistory();
-    this.todoService.saveTodoList(this.todoList);
-    this.todoService.saveTodoList(this.todoListFiltrated);
-    console.log("liste normale", this.todoList);
-    console.log("liste filtree", this.todoListFiltrated);
-    console.log("liste history", this.todoListHistory);
-
+    console.log("liste totale home", this.todoList);
+    console.log("liste filtrée home", this.todoListFiltrated);
   }
 
   getTodoListFiltrated() {
     this.todoList = this.todoService.getTodoList();
     this.todoListFiltrated = this.todoList.filter((todo) => todo.doneDate === null);
+    this.todoService.saveTodoList(this.todoList);
   }
 
   getTodoListHistory() {
     this.todoList = this.todoService.getTodoList();
     this.todoListHistory = this.todoList.filter((todo) => todo.doneDate !== null);
+    this.todoService.saveTodoList(this.todoList);
   }
 
   checkUrgentList() {
@@ -59,17 +57,21 @@ export class HomeComponent {
 
       const index = this.todoListFiltrated.findIndex(todo => todo.id === id);
       //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
+     if (index !== -1) {
       this.todoListFiltrated.splice(index, 1);
+      console.log ("index", index);
       this.todoService.saveTodoList(this.todoListFiltrated);
       console.log("liste filtrée apres", this.todoListFiltrated);
 
       //j'ajoute la todo qui a une date maintenant dans la liste history
       this.todoListHistory.push(todo);
+      
       console.log("todo select", todo);
       //       // on enregistre toutes les listes
       // this.todoService.saveTodoList(this.todoListFiltrated);
       //this.todoService.saveTodoList(this.todoListHistory);
       console.log("liste historique", this.todoListHistory);
+     }
 
     });
 
