@@ -51,7 +51,9 @@ export class TodosService {
   //get HistoryList
   getHistoryList() : ITodo[]{
     const historyList = this.getTodoList();
-    historyList.filter((todo : any) => todo.doneDate !== null);
+    console.log("historyList bonne ?", historyList);
+    historyList.filter((todo? : ITodo) => todo?.doneDate !== null);
+    console.log("liste history aprs filtre", historyList);
     this.saveTodoList(historyList);
     return historyList;
   }

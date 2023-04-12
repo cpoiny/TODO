@@ -26,6 +26,7 @@ p{
 ul li {
     list-style: none;
     margin-bottom:23px;
+    
 }
 
 button {
@@ -53,4 +54,7 @@ button {
         border: none;
         z-index: 2;
         cursor: pointer;
+}
+.category {
+    padding-right: 5px;
 }
