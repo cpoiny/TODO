@@ -34,8 +34,8 @@
         <ul *ngFor="let todo of todoListHistory; let index = index">
 
                 <li>
-                    <button type="button" value="checked" (click)="removeTodo(todo.id)"> </button>
-                    <span>{{todo.category}}</span>
+                    <button type="button" value="checked" (click)="removeTodo(todo.id)"><span><b>&#10003;</b></span> </button>
+                    <span class="category">{{todo.category}}  </span>
                     <span>{{todo.content}}</span>
                 </li>
         

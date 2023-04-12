@@ -49,8 +49,6 @@ export class AddComponent {
 
     this.getTodoList();
     this.getTodoListFiltrated();
-  console.log("liste totale", this.todoList);
-  console.log("liste en cours", this.todoList.filter(todo => todo.doneDate === null));
   }
 
 

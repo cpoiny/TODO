@@ -25,8 +25,10 @@ export class HomeComponent {
     this.getTodoListFiltrated();
     this.checkUrgentList();
     this.getTodoListHistory();
-    console.log("liste totale home", this.todoList);
-    console.log("liste filtrée home", this.todoListFiltrated);
+    console.log("liste totale page home", this.todoList);
+    console.log("liste en cours page home", this.todoList.filter(todo => todo.doneDate === null));
+
+
   }
 
   getTodoListFiltrated() {
@@ -49,7 +51,7 @@ export class HomeComponent {
   //fonction pour basculer la todo dans history en lui donnant une date
   todoDone(id: number): void {
 
-    console.log("liste filtrée please", this.todoListFiltrated);
+    // Liste normale avec ajout de la date
     this.todoListFiltrated.forEach((todo) => {
       if (todo.id === id) {
         todo.doneDate = new Date;
@@ -57,39 +59,19 @@ export class HomeComponent {
 
       const index = this.todoListFiltrated.findIndex(todo => todo.id === id);
       //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
-     if (index !== -1) {
-      this.todoListFiltrated.splice(index, 1);
-      console.log ("index", index);
-      this.todoService.saveTodoList(this.todoListFiltrated);
-      console.log("liste filtrée apres", this.todoListFiltrated);
-
-      //j'ajoute la todo qui a une date maintenant dans la liste history
-      this.todoListHistory.push(todo);
-      
-      console.log("todo select", todo);
-      //       // on enregistre toutes les listes
-      // this.todoService.saveTodoList(this.todoListFiltrated);
-      //this.todoService.saveTodoList(this.todoListHistory);
-      console.log("liste historique", this.todoListHistory);
-     }
-
+      if (index !== -1) {
+        this.todoListFiltrated.splice(index, 1);
+        this.todoService.saveTodoList(this.todoListFiltrated);
+      }
     });
 
     this.todoList.forEach((todo) => {
       if (todo.id === id) {
         todo.doneDate = new Date;
+        console.log("todo avec date", todo.doneDate);
       }
-
-
     });
     this.todoService.saveTodoList(this.todoList);
-    console.log("liste apres ajout date", this.todoList);
-    // })
-
-
-
-
+    console.log("liste totale ajout date", this.todoList);
   }
-
-
 }
