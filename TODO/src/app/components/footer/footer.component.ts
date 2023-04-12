@@ -7,15 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-url : any;
+// url : any;
 
 constructor (
-  private location : Location
+  // private location : Location
 ) {}
 
 ngOnInit(){
   //afin de détecter la page active grace a la methode location
-  this.location.onUrlChange((urlActive) => this.url = urlActive);
+  // this.location.onUrlChange((urlActive) => this.url = urlActive);
 
 }
 

@@ -8,11 +8,11 @@ import { ITodo } from 'src/app/todo';
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent {
-  todoList: ITodo[] = [];
+  todoList!: ITodo[];
   onlyUrgentList: ITodo[] = [];
   notUrgentList: ITodo[] = [];
-  todoListHistory: ITodo[] = [];
-  todoListFiltrated: ITodo[] = [];
+  todoListHistory!: ITodo[];
+  todoListFiltrated!: ITodo[];
 
   constructor(
     public todoService: TodosService
@@ -20,19 +20,28 @@ export class HistoryComponent {
 
   ngOnInit(): void {
     this.getTodoList();
-    this.checkUrgentList();
+    // this.checkUrgentList();
     this.getHistory();
+    // console.log("liste", this.todoList);
+    // console.log("liste filtrée", this.todoListFiltrated);
+    console.log("liste historique dans history", this.todoListHistory);
   }
 
   getTodoList() {
     this.todoList = this.todoService.getTodoList();
-    this.todoListFiltrated = this.todoList.filter((todo) => todo.doneDate === null);
   }
 
+  getTodoListFiltrated() {
+    this.todoList = this.todoService.getTodoList();
+    this.todoListFiltrated = this.todoList.filter((todo) => todo.doneDate === null);
+  }
   getHistory() {
-    this.todoListHistory = this.todoList.filter((todo) => todo.doneDate !== null)
-    console.log("liste historique", this.todoListHistory);
-    this.todoListHistory.sort();
+    this.todoListHistory =this.todoService.getHistoryList();
+    
+
+    // this.todoListHistory = this.todoList.filter((todo) => todo.doneDate !== null)
+    // console.log("liste historique", this.todoListHistory);
+    //this.todoListHistory.sort();
   }
 
 
@@ -43,18 +52,28 @@ export class HistoryComponent {
 
 
   removeTodo(id: number): void {
+    console.log("liste history dans fonction remove", this.todoListHistory);
     this.todoListHistory.forEach((todo) => {
       if (todo.id === id) {
         todo.doneDate = null;
       }
       const index = this.todoListHistory.findIndex(todo => todo.id === id);
       this.todoListHistory.splice(index, 1);
+      this.todoList.splice(index, 1);
       this.todoService.saveTodoList(this.todoListHistory);
-      this.todoListFiltrated.push();
+      console.log("liste historique dans history", this.todoListHistory);
+
+      this.todoListFiltrated.push(todo);
+      this.todoList.push(todo);
       this.todoService.saveTodoList(this.todoListFiltrated);
+      this.todoService.saveTodoList(this.todoList);
+      console.log("liste filtrée dans history", this.todoListFiltrated);
+      console.log("liste normal dans history", this.todoList);
 
     })
   }
+
+
 }
 
 
