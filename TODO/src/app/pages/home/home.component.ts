@@ -47,18 +47,44 @@ export class HomeComponent {
     this.todoListFiltrated.forEach((todo) => {
       if (todo.id === id) {
         todo.doneDate = new Date;
+        console.log("new date", todo.doneDate);
       }
-      const index = this.todoListFiltrated.findIndex(todo => todo.id === id);
-      //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
-      this.todoListFiltrated.splice(index, 1);
-      this.todoService.saveTodoList(this.todoListFiltrated);
+     
+      // const index = this.todoListFiltrated.findIndex(todo => todo.id === id);
+      // //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
+      // this.todoListFiltrated.splice(index, 1);
+      // // console.log("liste filtrée", this.todoListFiltrated);
       
-      //j'ajoute la todo qui a une date maintenant dans la liste history
-      this.todoListHistory.push(todo);
-      this.todoService.saveTodoList(this.todoListHistory);
-    })
-  }
+      // //j'ajoute la todo qui a une date maintenant dans la liste history
+      // this.todoListHistory.push(todo);
+      //       // on enregistre toutes les listes
+      // this.todoService.saveTodoList(this.todoListFiltrated);
+      // this.todoService.saveTodoList(this.todoListHistory);
+      // console.log("liste historique", this.todoListHistory);
+      // console.log("liste normal", this.todoList);     
+    });
+
+    //mettre a jour la liste totale
+    // this.todoList.forEach((todo) => {
+    //   if (todo.id === id) {
+    //     todo.doneDate = new Date;
+    //   }
+  //     this.todoService.saveTodoList(this.todoList);
+  // })
+  
+
+  // removeGirl(id: number): void {
+  //   this.womanAbsent.forEach((student) => {
+  //     if (student.id === id) {
+  //       student.status = !student.status;
+  //       const index = this.womanAbsent.findIndex(student => student.id === id);
+  //       this.onlyPresent.push(student);
+  //       this.womanAbsent.splice(index, 1);
+  //     }
+  //   });
+  // }
+
 }
 
 
-
+}

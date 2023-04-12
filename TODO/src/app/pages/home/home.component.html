@@ -14,7 +14,7 @@
         <ul *ngFor="let todo of onlyUrgentList">
             <li>
                 <button type="button" (click)="todoDone(todo.id)"> </button>
-                <span>{{todo.category}} </span>
+                <span> {{todo.category}} </span>
                 <span> {{todo.content}}</span>
             </li>
         </ul>

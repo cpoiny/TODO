@@ -22,6 +22,9 @@ export class HistoryComponent {
     this.getTodoList();
     this.checkUrgentList();
     this.getHistory();
+    console.log("liste", this.todoList);
+    console.log("liste filtrée", this.todoListFiltrated);
+
   }
 
   getTodoList() {
@@ -49,9 +52,16 @@ export class HistoryComponent {
       }
       const index = this.todoListHistory.findIndex(todo => todo.id === id);
       this.todoListHistory.splice(index, 1);
+      this.todoList.splice(index, 1);
       this.todoService.saveTodoList(this.todoListHistory);
-      this.todoListFiltrated.push();
+      console.log("liste historique", this.todoListHistory);
+
+      this.todoListFiltrated.push(todo);
+      this.todoList.push(todo);
       this.todoService.saveTodoList(this.todoListFiltrated);
+      this.todoService.saveTodoList(this.todoList);
+      console.log("liste filtrée", this.todoListFiltrated);
+      console.log("liste normal", this.todoList);
 
     })
   }
