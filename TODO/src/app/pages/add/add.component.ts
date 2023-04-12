@@ -19,7 +19,7 @@ export class AddComponent {
   todoForm!: FormGroup;
   validationError: [] = [];
   todoList: ITodo[] = [];
-
+  todoListFiltrated : ITodo[] = [];
   todoUrgent?: boolean = false;
 
 
@@ -48,7 +48,9 @@ export class AddComponent {
     });
 
     this.getTodoList();
-  
+    this.getTodoListFiltrated();
+  console.log("liste totale", this.todoList);
+  console.log("liste en cours", this.todoList.filter(todo => todo.doneDate === null));
   }
 
 
@@ -57,16 +59,23 @@ export class AddComponent {
     this.todoList = this.todoService.getTodoList();
   }
 
+  getTodoListFiltrated() : void {
+    this.todoListFiltrated = this.todoList.filter(todo => todo.doneDate === null);
+  }
 
   //créer une fonction pour donner un id à une todo
   addTodo(): void {
     //je récupère ma todoList
-    const todoList = this.getTodoList();
+   // const todoList = this.getTodoList();
+   // console.log("todolist", todoList);
+   // const todoListFiltrated = todoList.filter(todo => todo.doneDate !== null));
     if (this.todoList.length > 0) {
+      console.log("longueur", this.todoList.length);
     const id = this.todoList.length + 1;
     //je lui donne un id
     this.todoItem.id = id;
   } else {
+    console.log("premier element", this.todoList.length);
     this.todoItem.id = 1;
   }
     //j'assigne la valeur de la catégorie à l'attribut category de ma todo
@@ -83,5 +92,6 @@ export class AddComponent {
     this.todoService.addToTodoList(this.todoItem);
     // je redirige sur la page home
     this.router.navigate(['home']);
+    
   }
 }

@@ -22,8 +22,8 @@ export class HistoryComponent {
     this.getTodoList();
     this.checkUrgentList();
     this.getHistory();
-    console.log("liste", this.todoList);
-    console.log("liste filtrée", this.todoListFiltrated);
+   // console.log("liste", this.todoList);
+   // console.log("liste filtrée", this.todoListFiltrated);
 
   }
 
@@ -34,7 +34,7 @@ export class HistoryComponent {
 
   getHistory() {
     this.todoListHistory = this.todoList.filter((todo) => todo.doneDate !== null)
-    console.log("liste historique", this.todoListHistory);
+   // console.log("liste historique", this.todoListHistory);
     this.todoListHistory.sort();
   }
 
