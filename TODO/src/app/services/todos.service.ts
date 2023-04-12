@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ITodo } from '../todo';
 
-export interface ITodosTotal {
-  todo: ITodo;
-}
+// export interface ITodosTotal {
+//   todo: ITodo;
+// }
 
 
 @Injectable({
@@ -11,7 +11,6 @@ export interface ITodosTotal {
 })
 export class TodosService {
 
-  quantity: number = 0;
   todoList: ITodo[] = [];
 
 
@@ -50,7 +49,12 @@ export class TodosService {
   }
 
   //get HistoryList
-  
+  getHistoryList() : ITodo[]{
+    const historyList = this.getTodoList();
+    historyList.filter((todo : any) => todo.doneDate !== null);
+    this.saveTodoList(historyList);
+    return historyList;
+  }
   }
 
 
