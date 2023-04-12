@@ -21,6 +21,7 @@ export class AddComponent {
   todoList: ITodo[] = [];
   todoListFiltrated : ITodo[] = [];
   todoUrgent?: boolean = false;
+  
 
 
   todoItem: ITodo = {
