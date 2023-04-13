@@ -1,6 +1,6 @@
 <!-- Formulaire -->
 
-<form [formGroup]="todoForm">
+<form #formGroup [formGroup]="todoForm">
 
     <div class="container flex column">
 
@@ -10,33 +10,33 @@
         <div class="all-cat">
 
             <div class="flex categoryList">
-                <input type="radio" id="cat1" formControlName="cat" name="cat" class="cat" value="🛍️">
+                <input required type="radio" id="cat1" formControlName="cat" name="cat" class="cat" value="🛍️">
                 <label for="cat1">🛍️</label>
             </div>
 
             <div class="flex categoryList">
-                <input type="radio" name="cat" class="cat" id="cat2" formControlName="cat"  value="💊️">
+                <input required type="radio" name="cat" class="cat" id="cat2" formControlName="cat"  value="💊️">
                 <label for="cat2">💊️</label>
             </div>
 
             <div class="flex categoryList">
-                <input type="radio" id="cat3" formControlName="cat" name="cat" class="cat" value="💼" >
+                <input required type="radio" id="cat3" formControlName="cat" name="cat" class="cat" value="💼" >
                 <!-- <label><img src="assets/icons/work-icon.png" alt="work"></label> -->
                 <label for="cat3">💼</label>
             </div>
 
             <div class="flex categoryList">
-                <input type="radio" id="cat4" formControlName="cat" name="cat" class="cat" value="💸" >
+                <input required type="radio" id="cat4" formControlName="cat" name="cat" class="cat" value="💸" >
                 <label for="cat4">💸</label>
             </div>
 
             <div class="flex categoryList">
-                <input type="radio" id="cat5" formControlName="cat" name="cat" class="cat" value="🧼">
+                <input required type="radio" id="cat5" formControlName="cat" name="cat" class="cat" value="🧼">
                 <label for="cat5">🧼</label>
             </div>
 
             <div class="flex categoryList">
-                <input type="radio" id="cat6" formControlName="cat" name="cat" class="cat" value="🤷‍♀️" >
+                <input required type="radio" id="cat6" formControlName="cat" name="cat" class="cat" value="🤷‍♀️" >
                 <label for="cat6">🤷‍♀️</label>
             </div>
         </div>
@@ -48,7 +48,7 @@
 
         <div class="flex column">
             <label class="titre style" for="todo">Quelle tâche avez-vous à effectuer ?</label>
-            <input type="text" id="todo" formControlName="todo" class="tache-a-remplir"
+            <input  requiredtype="text" id="todo" formControlName="todo" class="tache-a-remplir"
                 placeholder="Exemple: Faire les courses">
             <!-- Option urgence de la taĉhe -->
             <div class="option flex">
@@ -59,7 +59,7 @@
 
             </div>
 
-            <button class="valider" type="submit" (click)="addTodo()">Valider ma tâche</button>
+            <button [disabled]="formGroup.invalid"class="valider" type="submit" (click)="addTodo()">Valider ma tâche</button>
 
         </div>
     </div>

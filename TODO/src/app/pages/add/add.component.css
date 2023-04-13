@@ -101,6 +101,12 @@ input[type="radio"].urgente {
 }
 
 /*css pour categorie */
+button:disabled,
+button[disabled]{
+  background-color: #64A7D9;
+  opacity: 50%;
+
+}
 
  /* input[type="radio"].cat {
     display: none;
