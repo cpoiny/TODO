@@ -13,9 +13,12 @@
 
         <ul *ngFor="let todo of onlyUrgentList">
             <li>
-                <button type="button" value="checked" (click)="removeTodo(todo.id)"> <span><b>&#10003;</b></span></button>
-                <span>{{todo.category}} </span>
-                <span> {{todo.content}}</span>
+                <button type="button" value="checked" (click)="removeTodo(todo.id)">
+                    <span><b>&#10003;</b></span></button>
+                <a routerLink="/add/{{todo.id}}">
+                    <span> {{todo.category}} </span>
+                    <span> {{todo.content}}</span>
+                </a>
             </li>
         </ul>
 
@@ -33,12 +36,15 @@
 
         <ul *ngFor="let todo of notUrgentList; let index = index">
 
-                <li>
-                    <button type="button" value="checked" (click)="removeTodo(todo.id)"><span><b>&#10003;</b></span> </button>
-                    <span class="category">{{todo.category}}  </span>
-                    <span>{{todo.content}}</span>
-                </li>
-        
+            <li>
+                <button type="button" value="checked" (click)="removeTodo(todo.id)"><span><b>&#10003;</b></span>
+                </button>
+                <a routerLink="/add/{{todo.id}}">
+                    <span> {{todo.category}} </span>
+                    <span> {{todo.content}}</span>
+                </a>
+            </li>
+
         </ul>
     </section>
 
@@ -50,7 +56,7 @@
     <div class="otherContent flex column">
         <p>Votre historique est vide <img class="icone-category" src="assets/icons/no-todo-icon.png"
                 alt="icon-category"></p>
-        
+
         <button routerLink="/add" type="button" class="history">Créer une tâche</button>
     </div>
 </ng-template>
