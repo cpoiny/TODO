@@ -94,10 +94,19 @@ input::placeholder {
     padding: 2px 10px;
 }
 
-input[type="radio"].urgente {
+
+/*CSS pour le bouton urgence */
+input[type="checkbok"].urgente {
     width: 25px;
     height: 25px;
     background-color: var(--dark-blue);
+}
+
+
+input[type="checkbox"]:checked+.urgente {
+    background-color: #E475F1;
+    /* border: 3px var( --darkblue) solid; */
+    /* transition: all 0.2s; */
 }
 
 /*css pour categorie */
@@ -107,6 +116,8 @@ button[disabled]{
   opacity: 50%;
 
 }
+
+
 
  /* input[type="radio"].cat {
     display: none;

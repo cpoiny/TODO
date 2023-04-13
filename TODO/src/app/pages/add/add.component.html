@@ -53,7 +53,7 @@
             <!-- Option urgence de la taĉhe -->
             <div class="option flex">
 
-                <input class="style urgente" type="radio" name="urgente">
+                <input type="checkbox" class="style urgente" formControlName="urgence" name="urgence" (click)="urgence()" >
                 <p class="style">La tâche est urgente</p>
                 <img src="assets/icons/urgent-icon.png" alt="icon_urgent" width="20px">
 
