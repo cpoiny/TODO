@@ -11,9 +11,9 @@
             <p><img class="icone-urgent" src="assets/icons/urgent-icon.png" alt="icon-urgent"> Tâches urgentes</p>
         </div>
 
-        <ul *ngFor="let todo of todoListHistory">
+        <ul *ngFor="let todo of onlyUrgentList">
             <li>
-                <button type="button" value="checked" (click)="removeTodo(todo.id)"> </button>
+                <button type="button" value="checked" (click)="removeTodo(todo.id)"> <span><b>&#10003;</b></span></button>
                 <span>{{todo.category}} </span>
                 <span> {{todo.content}}</span>
             </li>
@@ -26,12 +26,12 @@
     <br>
 
     <!-- Section des todos non urgentes -->
-    <section class="non-urgent" *ngIf="todoListHistory.length > 0">
+    <section class="non-urgent" *ngIf="notUrgentList.length > 0">
         <div class="flex">
             <p><img class="icone-urgent" src="assets/icons/flower-icon.png" alt="icon-flower">Tâches non urgentes</p>
         </div>
 
-        <ul *ngFor="let todo of todoListHistory; let index = index">
+        <ul *ngFor="let todo of notUrgentList; let index = index">
 
                 <li>
                     <button type="button" value="checked" (click)="removeTodo(todo.id)"><span><b>&#10003;</b></span> </button>

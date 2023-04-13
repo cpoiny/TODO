@@ -21,6 +21,7 @@ export class HistoryComponent {
   ngOnInit(): void {
     this.getTodoList();
     this.getHistory();
+    this.checkUrgentList();
     console.log("liste history dans history", this.todoListHistory);
   }
 
@@ -58,6 +59,20 @@ export class HistoryComponent {
         this.todoService.saveTodoList(this.todoListHistory);
       }
     });
+
+    const index2 = this.notUrgentList.findIndex(todo => todo.id === id);
+    if (index2 != -1) {
+      //liste historique
+      this.notUrgentList.splice(index2, 1);
+      this.todoService.saveTodoList(this.notUrgentList);
+    }
+
+    const index3 = this.onlyUrgentList.findIndex(todo => todo.id === id);
+    if (index3 != -1) {
+      //liste historique
+      this.onlyUrgentList.splice(index3, 1);
+      this.todoService.saveTodoList(this.onlyUrgentList);
+    }
 
     //todoList totale
     this.todoList.forEach((todo) => {
