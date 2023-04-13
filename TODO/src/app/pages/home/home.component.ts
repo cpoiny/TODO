@@ -65,6 +65,23 @@ export class HomeComponent {
       }
     });
 
+   
+ 
+
+  const index2 = this.onlyUrgentList.findIndex(todo => todo.id === id);
+  //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
+  if (index2 !== -1) {
+    this.onlyUrgentList.splice(index2, 1);
+    //this.onlyUrgentList.saveTodoList(this.notUrgentList);
+  }
+
+  const index3 = this.notUrgentList.findIndex(todo => todo.id === id);
+  //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
+  if (index3 !== -1) {
+    this.notUrgentList.splice(index3, 1);
+   // this.notUrgentList.saveTodoList(this.notUrgentList);
+  }
+
     this.todoList.forEach((todo) => {
       if (todo.id === id) {
         todo.doneDate = new Date;

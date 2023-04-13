@@ -55,7 +55,7 @@ export class AddComponent {
 
     this.getTodoList();
     this.getTodoListFiltrated();
-    this.urgence();
+    //this.urgence();
   }
 
 
