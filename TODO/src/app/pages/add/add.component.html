@@ -1,6 +1,6 @@
 <!-- Formulaire -->
 
-<form #formGroup [formGroup]="todoForm">
+<form #formGroup="ngForm" [formGroup]="todoForm">
 
     <div class="container flex column">
 
@@ -59,7 +59,7 @@
 
             </div>
 
-            <button [disabled]="formGroup.invalid"class="valider" type="submit" (click)="addTodo()">Valider ma tâche</button>
+            <button [disabled]="formGroup.invalid" class="valider" type="submit" (click)="addTodo()">Valider ma tâche</button>
 
         </div>
     </div>
