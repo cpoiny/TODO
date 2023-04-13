@@ -1,5 +1,5 @@
 
-<section *ngIf="todoDetails">
+<!-- <section *ngIf="todoDetails"> -->
 
 <!-- Formulaire -->
 
@@ -51,23 +51,23 @@
 
         <div class="flex column">
             <label class="titre style" for="todo">Quelle tâche avez-vous à effectuer ?</label>
-            <input  requiredtype="text" id="todo" formControlName="todo" class="tache-a-remplir"
+            <input  requiredtype="text" id="todo" formControlName="{{todoForm.value.todo}}" class="tache-a-remplir"
                 placeholder="Exemple: Faire les courses">
             <!-- Option urgence de la taĉhe -->
             <div class="option flex">
 
                 <input type="checkbox" class="style urgente" formControlName="urgence" name="urgence" (click)="urgence()" >
-                <p class="style">La tâche est urgente</p>
+                <p class="style">La tâche est urgente </p>
                 <img src="assets/icons/urgent-icon.png" alt="icon_urgent" width="20px">
 
             </div>
 
-            <button [disabled]="formGroup.invalid" class="valider" type="submit" (click)="addTodo()">Valider ma tâche</button>
+            <button  class="valider" type="submit" (click)="addTodoDetails(todoItem.id)">Modifier ma tâche</button>
 
         </div>
     </div>
 
 </form>
 
-
-</section>
+<!-- 
+</section> -->
