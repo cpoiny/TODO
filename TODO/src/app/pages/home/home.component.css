@@ -1,45 +1,35 @@
 main {
     margin: 37px 0 0 26px;
-    width: 100vw;
-    height: 80vh;
+    width: 90vw;
+    height: 75vh;
     overflow-y: scroll;
 
-}
 
+}
 .otherContent {
     justify-content: center;
     align-items: center;
     width: 100%;
     min-height: 75vh;
 }
-
 p,
 li {
     font-size: 16px;
     font-weight: bold;
 }
-
 img {
     width: 5vw;
     display: inline;
 }
-
-
-p {
+.titre {
     margin-bottom: 32px;
     padding-left: 35px;
-    position: relative;
-}
-
-p img {
-    position: absolute;
-    left: 0
 }
 
 ul li {
     list-style: none;
     margin-bottom: 23px;
-
+    width: 80vw;
 }
 
 button {
@@ -53,21 +43,41 @@ button {
 .flex {
     display: flex;
 }
-
 .column {
     flex-direction: column;
 }
-
-ul li a {
-    position: absolute;
+.entete {
+    width: 80%;
+    flex-direction: row;
+    position: relative;
 }
-
 span {
     margin-left: 4px;
 }
 
 .icone-urgent {
-
+    margin-right: 50px;
     position: absolute;
-    left: 25px;
+    left: 0;
+}
+.vide {
+    margin-bottom : 32px;
+}
+
+/*Personnalisation de la scrollbar */
+
+/*largeur de la scrollbar */
+main::-webkit-scrollbar {
+    width:5px;
+}
+
+/*background de la scrollbar */
+main::-webkit-scrollbar-track {
+    background-color: var(--dark-blue);
+}
+
+/*couleur et arrondi de la scrollbar */
+main::-webkit-scrollbar-thumb {
+    background-color: var(--yellow);
+    border-radius: 15px;
 }

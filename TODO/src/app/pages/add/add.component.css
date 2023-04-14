@@ -45,9 +45,7 @@
     margin-bottom: 31px;
     font-weight: bold;
 }
-input[type="text"]{
-    color: green;
-}
+
 
 input::placeholder {
     padding: 24px 0 0 17px;
@@ -189,13 +187,8 @@ button[disabled] {
     background-color: var(--yellow);
 }
 
-/* .boxcat:after {
-    content: "";
-    position: absolute;
-    left: .5em;
-    display: none;
-}
+/* Modifier la zone de texte*/
 
-.container input:checked ~ .box:after {
-    display: block;
-  } */
+#todo:focus {
+    border: blue solid 2px;
+}

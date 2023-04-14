@@ -7,8 +7,8 @@
         <!-- <app-todo-card></app-todo-card> -->
 
 
-        <div class="flex">
-            <p><img class="icone-urgent" src="assets/icons/urgent-icon.png" alt="icon-urgent"> Tâches urgentes</p>
+        <div class="flex entete">
+            <p class="titre"><img class="icone-urgent" src="assets/icons/urgent-icon.png" alt="icon-urgent"> Tâches urgentes</p>
         </div>
 
         <ul *ngFor="let todo of onlyUrgentList">
@@ -30,8 +30,8 @@
 
     <!-- Section des todos non urgentes -->
     <section class="non-urgent" *ngIf="notUrgentList.length > 0">
-        <div class="flex">
-            <p><img class="icone-urgent" src="assets/icons/flower-icon.png" alt="icon-flower">Tâches non urgentes</p>
+        <div class="flex entete">
+            <p class="titre"><img class="icone-urgent" src="assets/icons/flower-icon.png" alt="icon-flower">Tâches non urgentes</p>
         </div>
 
         <ul *ngFor="let todo of notUrgentList; let index = index">
@@ -54,7 +54,7 @@
 <!-- Affichage si la todoList est vide-->
 <ng-template #otherContent>
     <div class="otherContent flex column">
-        <p>Votre historique est vide <img class="icone-category" src="assets/icons/no-todo-icon.png"
+        <p class="vide">Votre historique est vide <img class="icone-category" src="assets/icons/no-todo-icon.png"
                 alt="icon-category"></p>
 
         <button routerLink="/add" type="button" class="history">Créer une tâche</button>

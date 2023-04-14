@@ -1,7 +1,7 @@
 main {
     margin: 37px 0 0 26px;
-    width: 100vw;
-    height: 80vh;
+    width: 90vw;
+    height: 75vh;
     overflow-y: scroll;
 
 }
@@ -25,16 +25,12 @@ img {
     display: inline;
 }
 
-p {
+.titre {
     margin-bottom: 32px;
     padding-left: 35px;
-    position: relative;
 }
 
-p img {
-    position: absolute;
-    left: 0
-}
+
 
 ul li {
     list-style: none;
@@ -63,7 +59,11 @@ button {
     position: absolute;
     left: 25px;
 }
-
+.entete {
+    width: 80%;
+    flex-direction: row;
+    position: relative;
+}
 
 .history {
     width: 248px;
@@ -78,4 +78,31 @@ button {
 
 .category {
     padding-right: 5px;
+}
+.icone-urgent {
+    margin-right: 50px;
+    position: absolute;
+    left: 0;
+}
+.vide {
+    margin-bottom : 32px;
+}
+
+
+/*Personnalisation de la scrollbar */
+
+/*largeur de la scrollbar */
+main::-webkit-scrollbar {
+    width:5px;
+}
+
+/*background de la scrollbar */
+main::-webkit-scrollbar-track {
+    background-color: var(--dark-blue);
+}
+
+/*couleur et arrondi de la scrollbar */
+main::-webkit-scrollbar-thumb {
+    background-color: var(--yellow);
+    border-radius: 15px;
 }
