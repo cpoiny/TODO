@@ -10,6 +10,7 @@ main{
         align-items: center;
         width: 100%;
         min-height:75vh;
+       
  }
 
 p, li {
@@ -22,7 +23,8 @@ img {
 }
 p{
     margin-bottom: 32px;
-    padding-left: 30px;
+    margin-right :18px;
+    
 }
 ul li {
     list-style: none;
@@ -43,11 +45,24 @@ button {
 .column {
     flex-direction: column;
 }
-.icone-category{
-    margin-right: 10px;
-}
-img {
+
+.icone-urgent {
    
     position: absolute;
     left : 25px;
+}
+
+
+.history{
+    width: 248px;
+    height:48px;
+    border-radius:30px;
+    color: white;
+    background-color: var(--blue);
+    border: none;
+    z-index: 2;
+    cursor: pointer;
+}
+.category {
+padding-right: 5px;
 }

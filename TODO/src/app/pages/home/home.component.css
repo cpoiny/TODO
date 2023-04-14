@@ -22,7 +22,7 @@ img {
 }
 p{
     margin-bottom: 32px;
-    padding-left: 30px;
+    margin-left: 10px;
 }
 ul li {
     list-style: none;
@@ -49,7 +49,7 @@ ul li a {
 span {
     margin-left : 4px;
 }
-img {
+.icone-urgent {
    
     position: absolute;
     left : 25px;
