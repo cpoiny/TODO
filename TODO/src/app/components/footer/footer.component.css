@@ -7,15 +7,16 @@ footer {
     border-top: white 1px solid;
 }
 
-footer a {
+footer button {
     margin: 17px 0;
     border-radius: 50%;
     background-color: var(--dark-blue);
     width: 65.86px;
     height: 65.86px;
+    border : none;
 }
 
-footer a svg {
+footer button svg {
     width: 45%;
     background-color: var(--dark-blue);
 }
@@ -24,22 +25,11 @@ footer .burger {
     margin-left: 57px;
 }
 
-
-footer .burger:active {
-    background-color: var(--green);
-}
-
-footer .plus:active {
-    background-color: var(--yellow);
-}
-
 footer .history {
     margin-right: 71.41px;
 }
 
-footer .history:active{
-    background-color: var(--pink);
-}
+
 
 .flex {
     display: flex;
@@ -47,11 +37,14 @@ footer .history:active{
     align-items: center;
 }
 .bg-green {
-    background-color: var(--green);
+    background-color: var(--green)!important;
 }
 .bg-yellow {
-    background-color: var(--yellow);
+    background-color: var(--yellow)!important;
 }
 .bg-pink {
+    background-color: var(--pink)!important;
+}
+.active-button{
     background-color: var(--pink);
 }
