@@ -22,10 +22,12 @@ img {
 }
 p{
     margin-bottom: 32px;
+    padding-left: 30px;
 }
 ul li {
     list-style: none;
     margin-bottom:23px;
+    
 }
 
 button {
@@ -41,8 +43,15 @@ button {
 .column {
     flex-direction: column;
 }
-.icone-category{
-    margin-right: 10px;
+ul li a {
+    position: absolute;
 }
-
+span {
+    margin-left : 4px;
+}
+img {
+   
+    position: absolute;
+    left : 25px;
+}
 
