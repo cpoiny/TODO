@@ -153,21 +153,21 @@ export class TodoCardComponent {
   }
 
 
-  removeTodo(id:number) {
+  // removeTodo(id:number) {
    
-    const index = this.todoList.findIndex(todo => todo.id === id);
-    //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
-    if (index !== -1) {
-      this.todoList.splice(index,1);
-      this.todoService.saveTodoList(this.todoList);
-    }
+  //   const index = this.todoList.findIndex(todo => todo.id === id);
+  //   //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
+  //   if (index !== -1) {
+  //     this.todoList.splice(index,1);
+  //     this.todoService.saveTodoList(this.todoList);
+  //   }
 
-    const index2 = this.todoListFiltrated.findIndex(todo => todo.id === id);
-    //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
-    if (index2 !== -1 && index2) {
-      this.todoListFiltrated.splice(index2,1);
-      this.todoService.saveTodoList(this.todoListFiltrated);
-    }
-  }
+  //   const index2 = this.todoListFiltrated.findIndex(todo => todo.id === id);
+  //   //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
+  //   if (index2 !== -1 && index2) {
+  //     this.todoListFiltrated.splice(index2,1);
+  //     this.todoService.saveTodoList(this.todoListFiltrated);
+  //   }
+  // }
 }
 
