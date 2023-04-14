@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -7,16 +8,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-// url : any;
 
-constructor (
-  // private location : Location
-) {}
 
-ngOnInit(){
-  //afin de détecter la page active grace a la methode location
-  // this.location.onUrlChange((urlActive) => this.url = urlActive);
+constructor(private router: Router) {}
 
+isHomePage(): boolean {
+  return this.router.url === "/home";
+}
+
+isAddPage(): boolean {
+  return this.router.url === "/add";
+}
+
+isEditPage(): boolean {
+  return this.router.url === "/add/id";
+}
+
+isHistoryPage(): boolean {
+  return this.router.url === "/history";
 }
 
 }
