@@ -45,6 +45,9 @@
     margin-bottom: 31px;
     font-weight: bold;
 }
+input[type="text"]{
+    color: green;
+}
 
 input::placeholder {
     padding: 24px 0 0 17px;
@@ -127,10 +130,10 @@ input::placeholder {
 
 
 .box::after {
-    /* content: "/2713"; */
-    content: "v";
+    content: "✓";
     position: absolute;
-    left: .5em;
+    font-size: 20px;
+    left: .2em;
     display: none;
 }
 .container input:checked ~ .box:after {
