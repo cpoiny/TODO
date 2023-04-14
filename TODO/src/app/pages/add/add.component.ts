@@ -110,4 +110,6 @@ export class AddComponent {
     this.router.navigate(['home']);
 
   }
+
+  
 }

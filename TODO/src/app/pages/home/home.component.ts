@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TodosService } from 'src/app/services/todos.service';
 import { ITodo } from 'src/app/todo';
 
@@ -14,6 +14,7 @@ export class HomeComponent {
   todoListHistory: ITodo[] = [];
   onlyUrgentList: ITodo[] = [];
   notUrgentList: ITodo[] = [];
+  
 
 
   constructor(
@@ -65,22 +66,22 @@ export class HomeComponent {
       }
     });
 
-   
- 
 
-  const index2 = this.onlyUrgentList.findIndex(todo => todo.id === id);
-  //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
-  if (index2 !== -1) {
-    this.onlyUrgentList.splice(index2, 1);
-    this.todoService.saveTodoList(this.notUrgentList);
-  }
 
-  const index3 = this.notUrgentList.findIndex(todo => todo.id === id);
-  //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
-  if (index3 !== -1) {
-    this.notUrgentList.splice(index3, 1);
-    this.todoService.saveTodoList(this.notUrgentList);
-  }
+
+    const index2 = this.onlyUrgentList.findIndex(todo => todo.id === id);
+    //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
+    if (index2 !== -1) {
+      this.onlyUrgentList.splice(index2, 1);
+      this.todoService.saveTodoList(this.notUrgentList);
+    }
+
+    const index3 = this.notUrgentList.findIndex(todo => todo.id === id);
+    //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
+    if (index3 !== -1) {
+      this.notUrgentList.splice(index3, 1);
+      this.todoService.saveTodoList(this.notUrgentList);
+    }
 
     this.todoList.forEach((todo) => {
       if (todo.id === id) {
@@ -91,4 +92,22 @@ export class HomeComponent {
     this.todoService.saveTodoList(this.todoList);
     console.log("liste totale ajout date", this.todoList);
   }
+
+
+  // removeTodo(id: number) {
+
+  //   const index = this.todoList.findIndex(todo => todo.id === id);
+  //   //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
+  //   if (index !== -1) {
+  //     this.todoList.splice(index, 1);
+  //     this.todoService.saveTodoList(this.todoList);
+  //   }
+
+  //   const index2 = this.todoListFiltrated.findIndex(todo => todo.id === id);
+  //   //je retire l'element de ma todoList filtrée avec une todo avec doneDate = null
+  //   if (index2 !== -1 && index2) {
+  //     this.todoListFiltrated.splice(index2, 1);
+  //     this.todoService.saveTodoList(this.todoListFiltrated);
+  //   }
+  // }
 }
