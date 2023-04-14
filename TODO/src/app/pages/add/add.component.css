@@ -6,7 +6,7 @@
     background-color: var(--blue);
     border: none;
     cursor: pointer;
-    margin-top: 160px;
+    margin-top: 130px;
     align-self: center;
 }
 
@@ -36,18 +36,6 @@
     justify-content: space-around;
 
 }
-
-
-/* .categoryList label {
-    position: absolute;
-    top: 12px;
-    width: 48px;
-    height: 48px;
-    background-color: var(--yellow);
-    border-radius: 50%;
-    border: none;
-
-} */
 
 .tache-a-remplir {
     width: 100%;
@@ -95,6 +83,11 @@ input::placeholder {
 }
 
 
+.boxcontainer img{
+    position: absolute;
+    margin-left: 8px;
+    
+}
 /*CSS pour le bouton urgence */
 .boxcontainer {
     display: block;
@@ -157,7 +150,8 @@ button[disabled] {
     display: block;
     position: relative;
     padding-left: 35px;
-    margin-bottom: 12px;
+    margin-bottom: 28px;
+    margin-top: -10px;
     cursor: pointer;
     font-size: 16px;
     -webkit-user-select: none;
