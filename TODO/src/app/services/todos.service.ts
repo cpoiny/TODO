@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ITodo } from '../todo';
+import { Observable, map } from 'rxjs';
 
 // export interface ITodosTotal {
 //   todo: ITodo;
@@ -40,6 +41,14 @@ export class TodosService {
       this.getTodoList();
     }
   }
+
+getTodoById(id: number): Observable<ITodo>{
+  const todoList = this.getTodoList();
+  this.todoList = todoList;
+return todoList.pipe(
+  map(todoList => this.todoList.find((todo: ITodo) => todo.id === id))
+)
+}
 
   //function pour ajouter une todo à la todoList
   addToTodoList(todoItem: ITodo) {
