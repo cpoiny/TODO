@@ -133,8 +133,9 @@ input::placeholder {
 }
 
 
-.box:after {
-    content: "V";
+.box::after {
+    /* content: "/2713"; */
+    content: "v";
     position: absolute;
     left: .5em;
     display: none;
