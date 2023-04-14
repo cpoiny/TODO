@@ -62,7 +62,7 @@
 
                 <label class="boxcontainer style">La tâche est urgente
                     <input type="checkbox" class="style urgente" formControlName="urgence" name="urgence"
-                        (click)="urgence()">
+                        >
                     <span class="box"></span>
 
                     <img src="assets/icons/urgent-icon.png" alt="icon_urgent" width="20px">
@@ -71,7 +71,7 @@
             </div>
 
             <!-- Valider la todo -->
-            <button [disabled]="formGroup.invalid" class="valider" type="submit" (click)="addTodo()">Modifier ma
+            <button [disabled]="formGroup.invalid" class="valider" type="submit">Modifier ma
                 tâche</button>
 
         </div>
