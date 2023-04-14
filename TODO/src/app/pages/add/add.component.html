@@ -10,23 +10,55 @@
         <div class="all-cat">
 
             <div class="flex categoryList">
-                <input required type="radio" id="cat1" formControlName="cat" name="cat" class="cat" value="🛍️">
-                <label for="cat1">🛍️</label>
+                <label class="boxCatContainer" for="cat1">
+                    <input required type="radio" id="cat1" formControlName="cat" name="cat" class="cat" value="🛍️">
+                    <span class="boxcat">🛍️</span>
+                </label>
+            </div>
+            <div class="flex categoryList">
+                <label class="boxCatContainer"  for="cat2">
+                    <input required type="radio" id="cat2" formControlName="cat" name="cat" class="cat" value="💊️">
+                    <span class="boxcat">💊️</span>
+                </label>
+            </div>
+            <div class="flex categoryList">
+                <label class="boxCatContainer"  for="cat3">
+                    <input required type="radio" id="cat3" formControlName="cat" name="cat" class="cat" value="💼">
+                    <span class="boxcat">💼</span>
+                </label>
+            </div>
+            <div class="flex categoryList">
+                <label class="boxCatContainer"  for="cat4">
+                    <input required type="radio" id="cat4" formControlName="cat" name="cat" class="cat" value="💸">
+                    <span class="boxcat">💸</span>
+                </label>
+            </div>
+            <div class="flex categoryList">
+                <label class="boxCatContainer"  for="cat5">
+                    <input required type="radio" id="cat5" formControlName="cat" name="cat" class="cat" value="🧼">
+                    <span class="boxcat">🧼</span>
+                </label>
+            </div>
+            <div class="flex categoryList">
+                <label class="boxCatContainer"  for="cat6">
+                    <input required type="radio" id="cat6" formControlName="cat" name="cat" class="cat" value="🤷‍♀️">
+                    <span class="boxcat">🤷‍♀️</span>
+                </label>
             </div>
 
-            <div class="flex categoryList">
+            <!-- <div class="flex categoryList">
                 <input required type="radio" id="cat2" formControlName="cat" name="cat" class="cat" value="💊️">
                 <label for="cat2">💊️</label>
             </div>
 
             <div class="flex categoryList">
-                <input required type="radio" id="cat3" formControlName="cat" name="cat" class="cat" value="💼" >
-                <!-- <label><img src="assets/icons/work-icon.png" alt="work"></label> -->
+                <input required type="radio" id="cat3" formControlName="cat" name="cat" class="cat" value="💼">
+               
                 <label for="cat3">💼</label>
             </div>
 
             <div class="flex categoryList">
-                <input required type="radio" id="cat4" formControlName="cat" name="cat" class="cat" value="💸" >
+                <input required type="radio" id="cat4" formControlName="cat" name="cat" class="cat" value="💸">
                 <label for="cat4">💸</label>
             </div>
 
@@ -36,9 +68,9 @@
             </div>
 
             <div class="flex categoryList">
-                <input required type="radio" id="cat6" formControlName="cat" name="cat" class="cat" value="🤷‍♀️" >
+                <input required type="radio" id="cat6" formControlName="cat" name="cat" class="cat" value="🤷‍♀️">
                 <label for="cat6">🤷‍♀️</label>
-            </div>
+            </div> -->
         </div>
 
 
@@ -48,21 +80,23 @@
 
         <div class="flex column">
             <label class="titre style" for="todo">Quelle tâche avez-vous à effectuer ?</label>
-            <input  requiredtype="text" id="todo" formControlName="todo" class="tache-a-remplir"
+            <input requiredtype="text" id="todo" formControlName="todo" class="tache-a-remplir"
                 placeholder="Exemple: Faire les courses">
             <!-- Option urgence de la taĉhe -->
             <div class="option flex">
 
                 <label class="boxcontainer style">La tâche est urgente
-                    <input type="checkbox" class="style urgente" formControlName="urgence" name="urgence" (click)="urgence()" >
-                    <span class="box"><b class="coche">&#10003;</b></span>
+                    <input type="checkbox" class="style urgente" formControlName="urgence" name="urgence"
+                        (click)="urgence()">
+                    <span class="box"></span>
 
                     <img src="assets/icons/urgent-icon.png" alt="icon_urgent" width="20px">
                 </label>
 
             </div>
 
-            <button [disabled]="formGroup.invalid" class="valider" type="submit" (click)="addTodo()">Valider ma tâche</button>
+            <button [disabled]="formGroup.invalid" class="valider" type="submit" (click)="addTodo()">Valider ma
+                tâche</button>
 
         </div>
     </div>
