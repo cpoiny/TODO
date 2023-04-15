@@ -71,7 +71,7 @@
             </div>
 
             <!-- Valider la todo -->
-            <button [disabled]="formGroup.invalid" class="valider" type="submit" (click)="addTodo()">Modifier ma
+            <button [disabled]="formGroup.invalid" class="valider" type="submit" (click)="addTodo(todoDetails!.id)">Modifier ma
                 tâche</button>
 
         </div>

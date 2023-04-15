@@ -12,14 +12,6 @@ import { ITodo } from 'src/app/todo';
 export class TodoCardComponent {
 
   todoDetails?: ITodo;
-  // todoItem: ITodo = {
-  //   id: this.todoDetails!.id,
-  //   content: "",
-  //   category: null,
-  //   picture: "",
-  //   isUrgent: false,
-  //   doneDate: null
-  // }
 
   constructor(
     public todosService: TodosService,
@@ -75,11 +67,24 @@ export class TodoCardComponent {
 
 
 
-  //créer une fonction pour donner un id à une todo
-  addTodo(): void {
+  removeTodo(id: number) {
 
-     //recuperer la liste totale
    
+
+
+
+  }
+  //créer une fonction pour donner un id à une todo
+  addTodo(id:number): void {
+
+    //recuperer la liste totale
+    const todoList = this.todosService.getTodoList();
+
+    const index = todoList.findIndex((todo: ITodo) => todo.id === id);
+    todoList.splice(index, 1);
+    this.todosService.saveTodoList(todoList);
+
+
     console.log("etape1");
     //j'assigne la valeur de la catégorie à l'attribut category de ma todo
     this.todoDetails!.category = this.todoForm.value.cat;
@@ -95,9 +100,9 @@ export class TodoCardComponent {
 
     //j'ajoute les éléments au todoItem
     this.todosService.addToTodoList(this.todoDetails!);
-    console.log ("2");
+    console.log("2");
 
-   
+
 
     // je redirige sur la page home
     this.router.navigate(['home']);
