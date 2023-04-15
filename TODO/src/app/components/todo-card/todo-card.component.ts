@@ -77,6 +77,9 @@ export class TodoCardComponent {
 
   //créer une fonction pour donner un id à une todo
   addTodo(): void {
+
+     //recuperer la liste totale
+   
     console.log("etape1");
     //j'assigne la valeur de la catégorie à l'attribut category de ma todo
     this.todoDetails!.category = this.todoForm.value.cat;
@@ -88,29 +91,19 @@ export class TodoCardComponent {
       console.log("urgence dans fonction", this.todoForm.value.urgence);
       console.log("urgence dans fonction", this.todoDetails!.isUrgent);
     };
+    this.todoDetails!.doneDate = null;
 
     //j'ajoute les éléments au todoItem
     this.todosService.addToTodoList(this.todoDetails!);
     console.log ("2");
 
-    //recuperer la liste totale
-    const todoList = this.todosService.getTodoList();
+   
 
-    //je supprime la todo dans history si elle était dans history
-    if (this.todoDetails?.doneDate !== null) {
-      const historyList = this.todosService.getHistoryList();
-      historyList.splice(this.todoDetails!.id, 1);
-      this.todosService.saveTodoList(historyList);
-    } else {
-      const filtratedList = todoList.filter((todo: ITodo) => todo.doneDate === null);
-      filtratedList.splice(this.todoDetails.id, 1);
-      this.todosService.saveTodoList(filtratedList);
-    }
-    console.log("nouvelle tache", this.todoDetails!);
     // je redirige sur la page home
     this.router.navigate(['home']);
 
   }
 }
+
 
 
