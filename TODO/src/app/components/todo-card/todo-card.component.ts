@@ -67,15 +67,9 @@ export class TodoCardComponent {
 
 
 
-  removeTodo(id: number) {
 
-   
-
-
-
-  }
   //créer une fonction pour donner un id à une todo
-  addTodo(id:number): void {
+  addTodo(id: number): void {
 
     //recuperer la liste totale
     const todoList = this.todosService.getTodoList();
@@ -92,9 +86,11 @@ export class TodoCardComponent {
     this.todoDetails!.content = this.todoForm.value.todo;
     //j'assigne l'urgence à l'attribut category de ma todo
     if (this.todoForm.value.urgence) {
-      this.todoDetails!.isUrgent = true;
-      console.log("urgence dans fonction", this.todoForm.value.urgence);
-      console.log("urgence dans fonction", this.todoDetails!.isUrgent);
+
+      this.todoDetails!.isUrgent = !this.todoDetails!.isUrgent;
+
+    } else {
+      this.todoDetails!.isUrgent = !this.todoDetails!.isUrgent;
     };
     this.todoDetails!.doneDate = null;
 
