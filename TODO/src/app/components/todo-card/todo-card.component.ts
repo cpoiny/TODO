@@ -64,6 +64,41 @@ export class TodoCardComponent {
       urgence: this.todoDetails.isUrgent,
     });
   }
+
+
+
+
+  //créer une fonction pour donner un id à une todo
+  addTodo(id: number): void {
+    //recuperer la liste totale
+    const todoList = this.todosService.getTodoList();
+    const index = todoList.findIndex((todo: ITodo) => todo.id === id);
+    todoList.splice(index, 1);
+    this.todosService.saveTodoList(todoList);
+    //j'assigne la valeur de la catégorie à l'attribut category de ma todo
+    this.todoDetails!.category = this.todoForm.value.cat;
+    //j'assigne la valeur de la todo à l'attribut content de ma todo
+    this.todoDetails!.content = this.todoForm.value.todo;
+    //j'assigne l'urgence à l'attribut category de ma todo : si la radio est coché, j'inverse le boolean de false passe a true
+    if (this.todoForm.value.urgence) {
+      this.todoDetails!.isUrgent = !this.todoDetails!.isUrgent;
+      // si l'attribut n'est pas coché
+    } else {
+      this.todoDetails!.isUrgent = !this.todoDetails!.isUrgent;
+    };
+    this.todoDetails!.doneDate = null;
+
+    //j'ajoute les éléments au todoItem
+    this.todosService.addToTodoList(this.todoDetails!);
+
+
+
+
+    // je redirige sur la page home
+    this.router.navigate(['home']);
+
+  }
 }
+
 
 
