@@ -9,12 +9,14 @@
         </button>
 
         <!-- icone d'ajout de tache -->
-        <button class="plus flex" routerLink="/add" [ngClass]="{'bg-yellow': isAddPage() || isEditPage()}" >
-            <svg [ngClass]="{'bg-yellow': isAddPage()}"xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32">
+        <button class="plus flex" routerLink="/add"  [ngClass]="{'bg-yellow': isEditPage()}" >
+            <svg [ngClass]="{'bg-yellow': isEditPage()}"xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32">
                 <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M16 7v18m-9-9h18" />
             </svg>
         </button>
+
+            
 
         <!-- icone d'historique -->
         <button class="history flex" routerLink="/history" [ngClass]="{'bg-pink': isHistoryPage()}">

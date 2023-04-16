@@ -16,12 +16,9 @@ isHomePage(): boolean {
   return this.router.url === "/home";
 }
 
-isAddPage(): boolean {
-  return this.router.url === "/add";
-}
-
 isEditPage(): boolean {
-  return this.router.url === "/add/id";
+  console.log("verif",this.router.url=== "/add/todo.id");
+  return this.router.url.includes('/add');
 }
 
 isHistoryPage(): boolean {
