@@ -1,3 +1,5 @@
+# TODO
+
 Contexte du projet
 Rowjay, jeune entrepreneur, veut devenir riche. Comme le temps, c’est de l’argent, il a décidé de créer une application de to do list simple pour attirer le maximum d’utilisateurs. Rowjay est très exigent sur l’esthétique de son projet et souhaite que l’application ressemble comme deux gouttes d’eau à ses maquettes. Il refusera de payer si ça n’est pas le cas.
 
@@ -24,29 +26,6 @@ Creation d'une TODOLIST
  * Scroolbar customisée
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# TODO
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
 
