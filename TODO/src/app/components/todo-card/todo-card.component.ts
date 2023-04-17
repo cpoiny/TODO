@@ -81,11 +81,17 @@ export class TodoCardComponent {
     this.todoDetails!.content = this.todoForm.value.todo;
     //j'assigne l'urgence à l'attribut category de ma todo : si la radio est coché, j'inverse le boolean de false passe a true
     if (this.todoForm.value.urgence) {
-      this.todoDetails!.isUrgent = !this.todoDetails!.isUrgent;
+      this.todoDetails!.isUrgent = true;
+      // console.log("urgence formulaire", this.todoForm.value.urgence);
+      // console.log('urgence avant', this.todoDetails!.isUrgent);
+      // console.log('urgence apres', !this.todoDetails!.isUrgent);
       // si l'attribut n'est pas coché
+    // } else {
+    //   this.todoDetails!.isUrgent = this.todoDetails!.isUrgent;
+    // };
     } else {
-      this.todoDetails!.isUrgent = !this.todoDetails!.isUrgent;
-    };
+      this.todoDetails!.isUrgent = false;
+    }
     this.todoDetails!.doneDate = null;
 
     //j'ajoute les éléments au todoItem

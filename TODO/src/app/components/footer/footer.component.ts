@@ -17,7 +17,6 @@ isHomePage(): boolean {
 }
 
 isEditPage(): boolean {
-  console.log("verif",this.router.url=== "/add/todo.id");
   return this.router.url.includes('/add');
 }
 
